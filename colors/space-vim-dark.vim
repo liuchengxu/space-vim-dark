@@ -149,8 +149,8 @@ hi MoreMsg         ctermfg=229 guifg=#ffffaf
 hi Operator        ctermfg=32 cterm=bold guifg=#0087d7 gui=bold
 
 " complete menu
-hi Pmenu           ctermfg=81  ctermbg=16
-hi PmenuSel        ctermfg=255 ctermbg=242
+hi Pmenu           ctermfg=251  ctermbg=236
+hi PmenuSel        ctermfg=255 ctermbg=60 cterm=underline
 hi PmenuSbar                   ctermbg=232
 hi PmenuThumb      ctermfg=81
 
