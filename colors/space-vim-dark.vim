@@ -105,10 +105,10 @@ if &t_Co < 256
     finish
 endif
 
-hi Normal          ctermfg=67  ctermbg=234                guifg=#5F87AF guibg=#1C1C1C
+hi Normal          ctermfg=68  ctermbg=234                guifg=#5F87AF guibg=#1C1C1C
 hi CursorLine                  ctermbg=233   cterm=none                 guibg=#121212
-hi CursorLineNr    ctermfg=134 ctermbg=235   cterm=bold   guifg=#AF5FD7 guibg=#262626 gui=bold
-hi LineNr          ctermfg=239 ctermbg=235   cterm=bold   guifg=#4E4E4E guibg=#262626 gui=bold
+hi CursorLineNr    ctermfg=134 ctermbg=233   cterm=bold   guifg=#AF5FD7 guibg=#262626 gui=bold
+hi LineNr          ctermfg=239 ctermbg=233   cterm=bold   guifg=#4E4E4E guibg=#262626 gui=bold
 
 hi Boolean         ctermfg=135 guifg=#af5fff
 hi Character       ctermfg=74  guifg=#5fafd7
@@ -149,8 +149,8 @@ hi MoreMsg         ctermfg=229 guifg=#ffffaf
 hi Operator        ctermfg=32 cterm=bold guifg=#0087d7 gui=bold
 
 " complete menu
-hi Pmenu           ctermfg=251  ctermbg=236
-hi PmenuSel        ctermfg=255 ctermbg=60 cterm=underline
+hi Pmenu           ctermfg=141  ctermbg=235
+hi PmenuSel        ctermfg=251 ctermbg=97 cterm=bold
 hi PmenuSbar                   ctermbg=232
 hi PmenuThumb      ctermfg=81
 
@@ -184,19 +184,20 @@ hi Typedef         ctermfg=81   guifg=#5fd7ff
 hi Type            ctermfg=81   guifg=#5fd7ff gui=none         cterm=none
 hi Underlined      ctermfg=244  guifg=#808080 gui=underline        cterm=underline
 
-hi VertSplit       ctermfg=244  ctermbg=235   guifg=#808080 guibg=#262626 gui=none cterm=none
+" VertSplit consistent with normal background to hide it
+hi VertSplit        ctermfg=134 ctermbg=234   guifg=#1C1C1C guibg=#1C1C1C gui=none cterm=none
 hi VisualNOS                    ctermbg=238   guibg=#444444
 hi Visual                       ctermbg=236   guibg=#303030
-hi WarningMsg      ctermfg=231  ctermbg=238   guifg=#ffffff guibg=#444444 gui=bold cterm=bold
+hi WarningMsg      ctermfg=230  ctermbg=238   guifg=#ffffff guibg=#444444 gui=bold cterm=bold
 hi WildMenu        ctermfg=252  ctermbg=16    guifg=#d0d0d0 guibg=#000000
 
 hi Comment         ctermfg=37   guifg=#00afaf
 hi CursorColumn                 ctermbg=236                             guibg=#303030
 hi ColorColumn                  ctermbg=236                             guibg=#303030
-hi NonText         ctermfg=59                            guifg=#5f5f5f
+" tilde group
+hi NonText         ctermfg=141 guifg=#5f5f5f
 
 hi SpecialKey      ctermfg=59                            guifg=#5f5f5f
-
 
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
