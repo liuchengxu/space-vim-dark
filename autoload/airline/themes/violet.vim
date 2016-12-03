@@ -11,20 +11,20 @@
 "   it appears the same as normal mode
 
 " Normal mode                                    " fg             & bg
-let s:N1 = [ '#005f00' , '#afd700' , 252  , 98 ] " darkestgreen   & brightgreen
-let s:N2 = [ '#9e9e9e' , '#303030' , 134 , 234 ] " gray8          & gray2
-let s:N3 = [ '#ffffff' , '#121212' , 97 , 232 ] " white          & gray4
+let s:N1 = [ '#bcbcbc' , '#875faf' , 250  , 97 ] " darkestgreen   & brightgreen
+let s:N2 = [ '#af5fd7' , '#1c1c1c' , 134 , 234 ] " gray8          & gray2
+let s:N3 = [ '#875fdf' , '#080808' , 97 , 232 ] " white          & gray4
 
 " Insert mode                                    " fg             & bg
-let s:I1 = [ '#005f5f' , '#ffffff' , 250  , 35 ] " darkestcyan    & white
-let s:I2 = [ '#5fafd7' , '#0087af' , 23  , 42  ] " darkcyan       & darkblue
-let s:I3 = [ '#87d7ff' , '#005f87' , 54 , 79  ] " mediumcyan     & darkestblue
+let s:I1 = [ '#bcbcbc' , '#00af5f' , 250  , 35 ] " darkestcyan    & white
+let s:I2 = [ '#005f5f' , '#00d787' , 23  , 42  ] " darkcyan       & darkblue
+let s:I3 = [ '#5f0087' , '#5fd7a7' , 54 , 79  ] " mediumcyan     & darkestblue
 
 " Visual mode                                    " fg             & bg
-let s:V1 = [ '#080808' , '#ffaf00' , 52 , 166 ] " gray3          & brightestorange
+let s:V1 = [ '#5f0000' , '#d75f00' , 52 , 166 ] " gray3          & brightestorange
 
 " Replace mode                                   " fg             & bg
-let s:RE = [ '#ffffff' , '#d70000' , 51 , 160 ] " white          & brightred
+let s:RE = [ '#00ffff' , '#d70000' , 51 , 160 ] " white          & brightred
 
 let g:airline#themes#violet#palette = {}
 

@@ -127,7 +127,7 @@ hi DiffDelete      ctermfg=162 ctermbg=53
 hi DiffText                    ctermbg=102 cterm=bold
 
 hi Directory       ctermfg=67 guifg=#87afff gui=bold              cterm=bold
-hi Error           ctermfg=219 ctermbg=89    cterm=underline
+hi Error           ctermfg=219 ctermbg=234    cterm=none
 hi ErrorMsg        ctermfg=199 ctermbg=16    cterm=bold
 hi Exception       ctermfg=118               cterm=bold
 hi Float           ctermfg=135 guifg=#af5fff
@@ -135,7 +135,7 @@ hi FoldColumn      ctermfg=67  ctermbg=16
 hi Folded          ctermfg=67  ctermbg=16
 hi Function        ctermfg=134   guifg=#af5fd7 gui=bold            cterm=bold
 hi Identifier      ctermfg=98    guifg=#875fd7 gui=bold           cterm=bold
-hi Ignore          ctermfg=244 ctermbg=232
+hi Ignore          ctermfg=244 ctermbg=233
 hi IncSearch       ctermfg=83 ctermbg=16
 
 hi keyword         ctermfg=62    guifg=#5f5fd7 gui=bold           cterm=bold
@@ -151,7 +151,7 @@ hi Operator        ctermfg=32 cterm=bold guifg=#0087d7 gui=bold
 " complete menu
 hi Pmenu           ctermfg=141  ctermbg=235
 hi PmenuSel        ctermfg=251 ctermbg=97 cterm=bold
-hi PmenuSbar                   ctermbg=232
+hi PmenuSbar                   ctermbg=234
 hi PmenuThumb      ctermfg=81
 
 hi PreCondit       ctermfg=118 guifg=#87ff00    gui=bold         cterm=bold
@@ -161,7 +161,8 @@ hi Repeat          ctermfg=32               cterm=bold
 hi Search          ctermfg=0   ctermbg=83   guifg=#000000 guibg=#5fff5f cterm=NONE
 
 " marks column
-hi SignColumn      ctermfg=118 ctermbg=235
+" SignColumn may relate to ale sign
+hi SignColumn      ctermfg=118 ctermbg=234
 hi SpecialChar     ctermfg=161               cterm=bold
 hi SpecialComment  ctermfg=245               cterm=bold
 hi Special         ctermfg=81
@@ -173,12 +174,13 @@ if has("spell")
 endif
 hi Statement       ctermfg=68   guifg=#5f87d7 gui=bold            cterm=bold
 hi StatusLine      ctermfg=238  ctermbg=253
-hi StatusLineNC    ctermfg=244  ctermbg=232
+hi StatusLineNC    ctermfg=244  ctermbg=234
 hi StorageClass    ctermfg=208
 hi Structure       ctermfg=81 guifg=#5fd7ff
 hi Tag             ctermfg=161
 hi Title           ctermfg=176
-hi Todo            ctermfg=231  ctermbg=232   cterm=bold
+" relate to ale warning
+hi Todo            ctermfg=190  ctermbg=234   cterm=bold
 
 hi Typedef         ctermfg=81   guifg=#5fd7ff
 hi Type            ctermfg=81   guifg=#5fd7ff gui=none         cterm=none
@@ -188,7 +190,8 @@ hi Underlined      ctermfg=244  guifg=#808080 gui=underline        cterm=underli
 hi VertSplit        ctermfg=134 ctermbg=234   guifg=#1C1C1C guibg=#1C1C1C gui=none cterm=none
 hi VisualNOS                    ctermbg=238   guibg=#444444
 hi Visual                       ctermbg=236   guibg=#303030
-hi WarningMsg      ctermfg=230  ctermbg=238   guifg=#ffffff guibg=#444444 gui=bold cterm=bold
+hi Warning                      ctermbg=234 cterm=underline
+hi WarningMsg      ctermfg=230  ctermbg=234   guifg=#ffffff guibg=#444444 gui=bold cterm=bold
 hi WildMenu        ctermfg=252  ctermbg=16    guifg=#d0d0d0 guibg=#000000
 
 hi Comment         ctermfg=37   guifg=#00afaf
