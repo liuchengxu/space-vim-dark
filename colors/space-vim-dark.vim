@@ -91,7 +91,7 @@ call s:hi('Number',      117, '', 'None', 'None')
 call s:hi('String',      36, '', 'None', 'None')
 call s:hi('Conditional', 134, '', 'bold', 'bold')
 call s:hi('Constant',    135, '', 'bold', 'bold')
-call s:hi('Cursor',      253, 16, 'bold', 'bold')
+call s:hi('Cursor',      88, 214, 'bold', 'bold')
 call s:hi('Debug',       225, '', 'bold', 'bold')
 call s:hi('Define',      81, '', 'None', 'None')
 call s:hi('Delimiter',   241, '', 'None', 'None')
@@ -151,7 +151,7 @@ endif
 
 call s:hi('Statement', 68, '', 'bold', 'bold')
 
-call s:hi('StatusLine',   97, 0, 'None', 'None')
+call s:hi('StatusLine',   97, 0, 'bold', 'bold')
 call s:hi('StatusLineNC', 97, 16, 'None', 'None')
 
 call s:hi('StorageClass', 208, '', 'None', 'None')
