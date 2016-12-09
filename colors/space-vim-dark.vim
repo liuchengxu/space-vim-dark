@@ -1,6 +1,6 @@
 " Vim color file
 "
-" Author: Liu-Cheng Xu 
+" Author: Liu-Cheng Xu
 " URL: https://github.com/liuchengxu/space-vim-dark
 "
 " Note: Inspired by spacemacs-dark theme
@@ -79,10 +79,13 @@ function! s:hi(item, fg, bg, cterm_style, gui_style)
 endfunction
 
 " call s:hi(item, fg, bg, cterm_style, gui_style)
- 
+
 call s:hi('Normal',       68,  234, 'bold', 'None' )
+
+call s:hi('Cursor',       88, 214, 'bold', 'bold')
 call s:hi('CursorLine',   '',  233, 'None', 'None' )
 call s:hi('CursorLineNr', 134, 233, 'bold', 'bold' )
+call s:hi('CursorColumn', '',  233, 'None', 'None')
 call s:hi('LineNr',       239, 233, 'bold', 'bold' )
 
 call s:hi('Boolean',     135, '','None', 'None')
@@ -91,7 +94,6 @@ call s:hi('Number',      117, '', 'None', 'None')
 call s:hi('String',      36, '', 'None', 'None')
 call s:hi('Conditional', 134, '', 'bold', 'bold')
 call s:hi('Constant',    135, '', 'bold', 'bold')
-call s:hi('Cursor',      88, 214, 'bold', 'bold')
 call s:hi('Debug',       225, '', 'bold', 'bold')
 call s:hi('Define',      81, '', 'None', 'None')
 call s:hi('Delimiter',   241, '', 'None', 'None')
@@ -102,8 +104,6 @@ call s:hi('DiffDelete', 162,53, 'None', 'None')
 call s:hi('DiffText',   '',102, 'None', 'None')
 
 call s:hi('Directory',  67, '', 'bold', 'bold')
-call s:hi('Error',      160, 234, 'bold', 'bold')
-call s:hi('ErrorMsg',   199, 16, 'bold', 'bold')
 call s:hi('Exception',  118, '', 'bold', 'bold')
 call s:hi('Float',      135, '', 'None', 'None')
 call s:hi('FoldColumn', 67, 16, 'None', 'None')
@@ -111,12 +111,13 @@ call s:hi('Folded',     67, 16, 'None', 'None')
 call s:hi('Function',   134, '', 'bold', 'bold')
 call s:hi('Identifier', 98, '', 'bold', 'bold')
 call s:hi('Ignore',     244, 233, 'None', 'None')
-call s:hi('IncSearch',  83, 16, 'None', 'None')
+
+call s:hi('Search',    16, 119, 'None', 'None')
+call s:hi('IncSearch', 16, 119, 'bold', 'bold')
 
 call s:hi('Keyword',    62, '', 'bold', 'bold,italic')
 call s:hi('Label',      104, '', 'None', 'None')
 call s:hi('Macro',      110, '', 'None', 'None')
-call s:hi('SpecialKey', 81, '', 'None', 'None')
 
 call s:hi('MatchParen', 46, 235, 'bold,underline', 'bold,underline')
 call s:hi('ModeMsg',    229, '','None', 'None')
@@ -126,20 +127,21 @@ call s:hi('Operator',   32, '','bold', 'bold')
 " Popup menu
 call s:hi('Pmenu',      141, 235, 'None', 'None')
 call s:hi('PmenuSel',   251, 97, 'bold', 'bold')
-call s:hi('PmenuSbar',  '', 234, 'None', 'None')
-call s:hi('PmenuThumb', 81, '', 'None', 'None')
+call s:hi('PmenuSbar',  28, 233, 'None', 'None')
+call s:hi('PmenuThumb', 160, 97, 'None', 'None')
 
 call s:hi('PreCondit', 118, '', 'bold', 'bold')
 call s:hi('PreProc',   74, '', 'bold', 'bold')
 call s:hi('Question',  81, '', 'None', 'None')
 call s:hi('Repeat',    32, '', 'bold', 'bold')
-call s:hi('Search',    0, 83, 'None', 'None')
 
 " SignColumn may relate to ale sign
 call s:hi('SignColumn',     118, 234, 'None', 'None')
+
+call s:hi('Special',        81, '', 'None', 'None')
+call s:hi('SpecialKey',     59, '', 'None', 'None')
 call s:hi('SpecialChar',    161, '', 'bold', 'bold')
 call s:hi('SpecialComment', 245, '', 'bold', 'bold')
-call s:hi('Special',        81, '', 'None', 'None')
 
 " marks column
 if has('spell')
@@ -151,6 +153,7 @@ endif
 
 call s:hi('Statement', 68, '', 'bold', 'bold')
 
+" bug. opposite here.
 call s:hi('StatusLine',   97, 0, 'bold', 'bold')
 call s:hi('StatusLineNC', 97, 16, 'None', 'None')
 
@@ -168,16 +171,18 @@ call s:hi('Underlined', 244, '', 'underline', 'underline')
 call s:hi('VertSplit', 134, 234, 'None', 'None')
 call s:hi('VisualNOS', '', 238, 'None', 'None')
 call s:hi('Visual', '', 236, 'None', 'None')
-call s:hi('Warning', 228, 234, 'None', 'None')
-call s:hi('WarningMsg', 230, 234, 'None', 'None')
 call s:hi('WildMenu', 252, 16, 'None', 'None')
 
-call s:hi('Comment', 37, '', 'None', 'None')
-call s:hi('CursorColumn', '', 236, 'None', 'None')
+call s:hi('Warning', 228, 234, 'None', 'None')
+call s:hi('WarningMsg', 229, 234, 'None', 'None')
+
+call s:hi('Error',      160, 234, 'bold', 'bold')
+call s:hi('ErrorMsg',   196, 16, 'bold', 'bold')
+
+call s:hi('Comment', 37, '', 'None', 'italic')
 
 " tilde group
 call s:hi('NonText', 141, '', 'None', 'None')
-call s:hi('SpecialKey', 59, '', 'None', 'None')
 
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
