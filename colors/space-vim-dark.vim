@@ -88,6 +88,10 @@ call s:hi('CursorLineNr', 134, 233, 'bold', 'bold' )
 call s:hi('CursorColumn', '',  233, 'None', 'None')
 call s:hi('LineNr',       239, 233, 'bold', 'bold' )
 
+" bug. opposite here.
+call s:hi('StatusLine',   98, 232, 'bold', 'bold')
+call s:hi('StatusLineNC', 97, 233, 'None', 'None')
+
 call s:hi('Boolean',     135, '','None', 'None')
 call s:hi('Character',   74, '', 'None', 'None')
 call s:hi('Number',      117, '', 'None', 'None')
@@ -152,10 +156,6 @@ if has('spell')
 endif
 
 call s:hi('Statement', 68, '', 'bold', 'bold')
-
-" bug. opposite here.
-call s:hi('StatusLine',   97, 0, 'bold', 'bold')
-call s:hi('StatusLineNC', 97, 16, 'None', 'None')
 
 call s:hi('StorageClass', 208, '', 'None', 'None')
 call s:hi('Structure',    81, '', 'None', 'None')
