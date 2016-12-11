@@ -184,6 +184,8 @@ call s:hi('Comment', 37, '', 'None', 'italic')
 " tilde group
 call s:hi('NonText', 141, '', 'None', 'None')
 
+call s:hi('ColorColumn', '', 16, 'None', 'None')
+
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
 set background=dark
