@@ -18,9 +18,9 @@ endif
 
 let g:colors_name='space-vim-dark'
 
-if !exists('s:color_map')
+if !exists('g:COLOR_MAP')
     " refer to http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
-    let s:color_map = {
+    let g:COLOR_MAP = {
                 \   0 : '#000000',  1 : '#800000',  2 : '#008000',  3 : '#808000',  4 : '#000080',  5 : '#800080',  6 : '#008080',  7 : '#c0c0c0',
                 \   8 : '#808080',  9 : '#ff0000', 10 : '#00ff00', 11 : '#ffff00', 12 : '#0000ff', 13 : '#ff00ff', 14 : '#00ffff', 15 : '#ffffff',
                 \
@@ -70,30 +70,33 @@ endif
 
 function! s:hi(item, fg, bg, cterm_style, gui_style)
     if !empty(a:fg)
-        execute printf("hi %s ctermfg=%d guifg=%s", a:item, a:fg, s:color_map[a:fg])
+        execute printf("hi %s ctermfg=%d guifg=%s", a:item, a:fg, g:COLOR_MAP[a:fg])
     endif
     if !empty(a:bg)
-        execute printf("hi %s ctermbg=%d guibg=%s", a:item, a:bg, s:color_map[a:bg])
+        execute printf("hi %s ctermbg=%d guibg=%s", a:item, a:bg, g:COLOR_MAP[a:bg])
     endif
     execute printf("hi %s cterm=%s gui=%s", a:item, a:cterm_style, a:gui_style)
 endfunction
 
 " call s:hi(item, fg, bg, cterm_style, gui_style)
 
-call s:hi('Normal',       68,  234, 'bold', 'None' )
+let s:n_bg = 234
+
+call s:hi('Normal',       68,  s:n_bg, 'bold', 'None' )
 
 call s:hi('Cursor',       88, 214, 'bold', 'bold')
-call s:hi('CursorLine',   '',  233, 'None', 'None' )
-call s:hi('CursorLineNr', 134, 233, 'bold', 'bold' )
-call s:hi('CursorColumn', '',  233, 'None', 'None')
-call s:hi('LineNr',       239, 233, 'bold', 'bold' )
+
+call s:hi('LineNr',       239, s:n_bg-1, 'bold', 'bold' )
+call s:hi('CursorLine',   '',  s:n_bg-1, 'None', 'None' )
+call s:hi('CursorLineNr', 134, s:n_bg-1, 'bold', 'bold' )
+call s:hi('CursorColumn', '',  s:n_bg-1, 'None', 'None')
 
 " bug. opposite here.
-call s:hi('StatusLine',   98, 232, 'bold', 'bold')
-call s:hi('StatusLineNC', 97, 233, 'None', 'None')
+call s:hi('StatusLine',   98, s:n_bg+2, 'bold', 'bold')
+call s:hi('StatusLineNC', 97, s:n_bg+1, 'None', 'None')
 
 call s:hi('Boolean',     135, '','None', 'None')
-call s:hi('Character',   74, '', 'None', 'None')
+call s:hi('Character',   75, '', 'None', 'None')
 call s:hi('Number',      117, '', 'None', 'None')
 call s:hi('String',      36, '', 'None', 'None')
 call s:hi('Conditional', 134, '', 'bold', 'bold')
@@ -116,14 +119,14 @@ call s:hi('Function',   134, '', 'bold', 'bold')
 call s:hi('Identifier', 98, '', 'bold', 'bold')
 call s:hi('Ignore',     244, 233, 'None', 'None')
 
-call s:hi('Search',    16, 119, 'None', 'None')
-call s:hi('IncSearch', 16, 119, 'bold', 'bold')
+call s:hi('Search',    16, 79, 'bold', 'bold')
+call s:hi('IncSearch', 16, 79, 'bold', 'bold')
 
 call s:hi('Keyword',    62, '', 'bold', 'bold,italic')
 call s:hi('Label',      104, '', 'None', 'None')
 call s:hi('Macro',      110, '', 'None', 'None')
 
-call s:hi('MatchParen', 46, 235, 'bold,underline', 'bold,underline')
+call s:hi('MatchParen', 46, s:n_bg, 'bold,underline', 'bold,underline')
 call s:hi('ModeMsg',    229, '','None', 'None')
 call s:hi('MoreMsg',    229, '','None', 'None')
 call s:hi('Operator',   32, '','bold', 'bold')
@@ -135,9 +138,9 @@ call s:hi('PmenuSbar',  28, 233, 'None', 'None')
 call s:hi('PmenuThumb', 160, 97, 'None', 'None')
 
 call s:hi('PreCondit', 118, '', 'bold', 'bold')
-call s:hi('PreProc',   74, '', 'bold', 'bold')
+call s:hi('PreProc',   72, '', 'bold', 'bold')
 call s:hi('Question',  81, '', 'None', 'None')
-call s:hi('Repeat',    32, '', 'bold', 'bold')
+call s:hi('Repeat',    31, '', 'bold', 'bold')
 
 " SignColumn may relate to ale sign
 call s:hi('SignColumn',     118, 234, 'None', 'None')
@@ -168,15 +171,18 @@ call s:hi('Typedef',    81, '', 'None', 'None')
 call s:hi('Underlined', 244, '', 'underline', 'underline')
 
 " VertSplit consistent with normal background to hide it
-call s:hi('VertSplit', 134, 234, 'None', 'None')
+call s:hi('VertSplit', s:n_bg, s:n_bg, 'None', 'None')
+call s:hi('VertSplit', s:n_bg, s:n_bg, 'None', 'None')
+
 call s:hi('VisualNOS', '', 238, 'None', 'None')
-call s:hi('Visual', '', 236, 'None', 'None')
+call s:hi('Visual', '', s:n_bg+2, 'None', 'None')
+
 call s:hi('WildMenu', 252, 16, 'None', 'None')
 
-call s:hi('Warning', 228, 234, 'None', 'None')
-call s:hi('WarningMsg', 229, 234, 'None', 'None')
+call s:hi('Warning',    222, s:n_bg, 'None', 'None')
+call s:hi('WarningMsg', 223, s:n_bg, 'None', 'None')
 
-call s:hi('Error',      160, 234, 'bold', 'bold')
+call s:hi('Error',      160, s:n_bg, 'bold', 'bold')
 call s:hi('ErrorMsg',   196, 16, 'bold', 'bold')
 
 call s:hi('Comment', 37, '', 'None', 'italic')
@@ -184,7 +190,7 @@ call s:hi('Comment', 37, '', 'None', 'italic')
 " tilde group
 call s:hi('NonText', 141, '', 'None', 'None')
 
-call s:hi('ColorColumn', '', 16, 'None', 'None')
+call s:hi('ColorColumn', '', s:n_bg-1, 'None', 'None')
 
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
