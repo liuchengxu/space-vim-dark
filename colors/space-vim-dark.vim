@@ -18,9 +18,9 @@ endif
 
 let g:colors_name='space-vim-dark'
 
-if !exists('g:COLOR_MAP')
+if !exists('s:color_map')
     " refer to http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
-    let g:COLOR_MAP = {
+    let s:color_map = {
                 \   0 : '#000000',  1 : '#800000',  2 : '#008000',  3 : '#808000',  4 : '#000080',  5 : '#800080',  6 : '#008080',  7 : '#c0c0c0',
                 \   8 : '#808080',  9 : '#ff0000', 10 : '#00ff00', 11 : '#ffff00', 12 : '#0000ff', 13 : '#ff00ff', 14 : '#00ffff', 15 : '#ffffff',
                 \
@@ -70,10 +70,10 @@ endif
 
 function! s:hi(item, fg, bg, cterm_style, gui_style)
     if !empty(a:fg)
-        execute printf("hi %s ctermfg=%d guifg=%s", a:item, a:fg, g:COLOR_MAP[a:fg])
+        execute printf("hi %s ctermfg=%d guifg=%s", a:item, a:fg, s:color_map[a:fg])
     endif
     if !empty(a:bg)
-        execute printf("hi %s ctermbg=%d guibg=%s", a:item, a:bg, g:COLOR_MAP[a:bg])
+        execute printf("hi %s ctermbg=%d guibg=%s", a:item, a:bg, s:color_map[a:bg])
     endif
     execute printf("hi %s cterm=%s gui=%s", a:item, a:cterm_style, a:gui_style)
 endfunction
