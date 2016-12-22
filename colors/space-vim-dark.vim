@@ -80,115 +80,115 @@ endfunction
 
 let s:n_bg = 235
 
-call s:hi('Normal',       249,  s:n_bg, 'bold', 'None' )
+call s:hi('Normal' , 249 , s:n_bg , 'None' , 'None' )
 
-call s:hi('Cursor',       88, 214, 'bold', 'bold')
+call s:hi('Cursor' , 88 , 214 , 'bold' , 'bold')
 
-call s:hi('LineNr',       238, s:n_bg-1, 'None', 'None' )
-call s:hi('CursorLine',   '',  s:n_bg-1, 'None', 'None' )
-call s:hi('CursorLineNr', 134, s:n_bg-1, 'None', 'None' )
-call s:hi('CursorColumn', '',  s:n_bg-1, 'None', 'None')
+call s:hi('LineNr'       , 238 , s:n_bg-1 , 'None' , 'None' )
+call s:hi('CursorLine'   , ''  , s:n_bg-1 , 'None' , 'None' )
+call s:hi('CursorLineNr' , 134 , s:n_bg-1 , 'None' , 'None' )
+call s:hi('CursorColumn' , ''  , s:n_bg-1 , 'None' , 'None')
+
+call s:hi('ColorColumn' , '' , s:n_bg-1 , 'None' , 'None')
 
 " bug. opposite here.
-call s:hi('StatusLine',   140, s:n_bg+3, 'None', 'None')
-call s:hi('StatusLineNC', 244, s:n_bg+1, 'None', 'None')
+call s:hi('StatusLine'   , 140 , s:n_bg+2 , 'None' , 'None')
+call s:hi('StatusLineNC' , 244 , s:n_bg+1 , 'None' , 'None')
 
-call s:hi('Boolean',     135, '','None', 'None')
-call s:hi('Character',   75, '', 'None', 'None')
-call s:hi('Number',      117, '', 'None', 'None')
-call s:hi('String',      36, '', 'None', 'None')
-call s:hi('Conditional', 134, '', 'bold', 'bold')
-call s:hi('Constant',    135, '', 'bold', 'bold')
-call s:hi('Debug',       225, '', 'bold', 'bold')
-call s:hi('Define',      81, '', 'None', 'None')
-call s:hi('Delimiter',   241, '', 'None', 'None')
+call s:hi('WildMenu' , 169 , s:n_bg+1 , 'bold' , 'bold')
 
-call s:hi('DiffAdd',    '',24, 'None', 'None')
-call s:hi('DiffChange', 181,239, 'None', 'None')
-call s:hi('DiffDelete', 162,53, 'None', 'None')
-call s:hi('DiffText',   '',102, 'None', 'None')
+call s:hi('Boolean'     , 135 , '' , 'None' , 'None')
+call s:hi('Character'   , 75  , '' , 'None' , 'None')
+call s:hi('Number'      , 117 , '' , 'None' , 'None')
+call s:hi('Float'       , 135 , '' , 'None' , 'None')
+call s:hi('String'      , 36  , '' , 'None' , 'None')
+call s:hi('Conditional' , 134 , '' , 'bold' , 'bold')
+call s:hi('Constant'    , 135 , '' , 'bold' , 'bold')
+call s:hi('Debug'       , 225 , '' , 'bold' , 'bold')
+call s:hi('Define'      , 81  , '' , 'None' , 'None')
+call s:hi('Delimiter'   , 241 , '' , 'None' , 'None')
 
-call s:hi('Directory',  67, '', 'bold', 'bold')
-call s:hi('Exception',  118, '', 'bold', 'bold')
-call s:hi('Float',      135, '', 'None', 'None')
-call s:hi('FoldColumn', 67, 16, 'None', 'None')
-call s:hi('Folded',     67, 16, 'None', 'None')
-call s:hi('Function',   170, '', 'bold', 'bold')
-call s:hi('Identifier', 98, '', 'bold', 'bold')
-call s:hi('Ignore',     244, 233, 'None', 'None')
+call s:hi('DiffAdd'    , ''  , 24  , 'None' , 'None')
+call s:hi('DiffChange' , 181 , 239 , 'None' , 'None')
+call s:hi('DiffDelete' , 162 , 53  , 'None' , 'None')
+call s:hi('DiffText'   , ''  , 102 , 'None' , 'None')
 
-call s:hi('Search',    16, 76, 'bold', 'bold')
-call s:hi('IncSearch', 16, 76, 'bold', 'bold')
+call s:hi('Directory'  , 67  , ''  , 'bold' , 'bold')
+call s:hi('Exception'  , 118 , ''  , 'bold' , 'bold')
+call s:hi('FoldColumn' , 67  , 16  , 'None' , 'None')
+call s:hi('Folded'     , 67  , 16  , 'None' , 'None')
+call s:hi('Function'   , 170 , ''  , 'bold' , 'bold')
+call s:hi('Identifier' , 98  , ''  , 'bold' , 'bold')
+call s:hi('Ignore'     , 244 , 233 , 'None' , 'None')
+call s:hi('Operator'   , 32  , ''  , 'bold' , 'bold')
 
-call s:hi('Keyword',    62, '', 'bold', 'bold,italic')
-call s:hi('Label',      104, '', 'None', 'None')
-call s:hi('Macro',      110, '', 'None', 'None')
+call s:hi('Search'    , 16 , 76 , 'bold' , 'bold')
+call s:hi('IncSearch' , 16 , 76 , 'bold' , 'bold')
 
-call s:hi('MatchParen', 46, s:n_bg, 'bold,underline', 'bold,underline')
-call s:hi('ModeMsg',    229, '','None', 'None')
-call s:hi('MoreMsg',    229, '','None', 'None')
-call s:hi('Operator',   32, '','bold', 'bold')
+call s:hi('PreCondit' , 118 , '' , 'bold' , 'bold')
+call s:hi('PreProc'   , 72  , '' , 'bold' , 'bold')
+call s:hi('Question'  , 81  , '' , 'None' , 'None')
+call s:hi('Repeat'    , 31  , '' , 'bold' , 'bold')
+
+call s:hi('Keyword' , 62  , '' , 'bold' , 'bold,italic')
+call s:hi('Label'   , 104 , '' , 'None' , 'None')
+call s:hi('Macro'   , 110 , '' , 'None' , 'None')
+
+call s:hi('MatchParen', 46, s:n_bg-1, 'bold,underline', 'bold,underline')
+
+call s:hi('ModeMsg'  , 229 , '' , 'None' , 'None')
+call s:hi('MoreMsg'  , 229 , '' , 'None' , 'None')
 
 " Popup menu
-call s:hi('Pmenu',      141, 235, 'None', 'None')
-call s:hi('PmenuSel',   251, 97, 'bold', 'bold')
-call s:hi('PmenuSbar',  28, 233, 'None', 'None')
-call s:hi('PmenuThumb', 160, 97, 'None', 'None')
-
-call s:hi('PreCondit', 118, '', 'bold', 'bold')
-call s:hi('PreProc',   72, '', 'bold', 'bold')
-call s:hi('Question',  81, '', 'None', 'None')
-call s:hi('Repeat',    31, '', 'bold', 'bold')
+call s:hi('Pmenu'      , 141 , 235 , 'None' , 'None')
+call s:hi('PmenuSel'   , 251 , 97  , 'bold' , 'bold')
+call s:hi('PmenuSbar'  , 28  , 233 , 'None' , 'None')
+call s:hi('PmenuThumb' , 160 , 97  , 'None' , 'None')
 
 " SignColumn may relate to ale sign
-call s:hi('SignColumn',     118, 234, 'None', 'None')
+call s:hi('SignColumn' , 118 , s:n_bg , 'None' , 'None')
+call s:hi('Todo'       , 190 , s:n_bg , 'bold' , 'bold')
 
-call s:hi('Special',        81, '', 'None', 'None')
-call s:hi('SpecialKey',     59, '', 'None', 'None')
-call s:hi('SpecialChar',    161, '', 'bold', 'bold')
-call s:hi('SpecialComment', 245, '', 'bold', 'bold')
+" VertSplit consistent with normal background to hide it
+call s:hi('VertSplit' , s:n_bg , s:n_bg , 'None' , 'None')
+
+call s:hi('Warning'    , 222 , s:n_bg , 'None' , 'None')
+call s:hi('WarningMsg' , 222 , s:n_bg , 'None' , 'None')
+
+call s:hi('Error'    , 160 , s:n_bg , 'bold' , 'bold')
+call s:hi('ErrorMsg' , 196 , s:n_bg , 'bold' , 'bold')
+
+call s:hi('Special'        , 81  , '' , 'None' , 'None')
+call s:hi('SpecialKey'     , 59  , '' , 'None' , 'None')
+call s:hi('SpecialChar'    , 161 , '' , 'bold' , 'bold')
+call s:hi('SpecialComment' , 245 , '' , 'bold' , 'bold')
 
 " marks column
 if has('spell')
-    call s:hi('SpellBad',   '', 52, 'None', 'None')
-    call s:hi('SpellCap',   '', 17, 'None', 'None')
-    call s:hi('SpellLocal', '', 17, 'None', 'None')
-    call s:hi('SpellBad',   '', 52, 'reverse', 'None')
+    call s:hi('SpellBad'   , '' , 52 , 'None'    , 'None')
+    call s:hi('SpellCap'   , '' , 17 , 'None'    , 'None')
+    call s:hi('SpellLocal' , '' , 17 , 'None'    , 'None')
+    call s:hi('SpellBad'   , '' , 52 , 'reverse' , 'None')
 endif
 
-call s:hi('Statement', 68, '', 'bold', 'bold')
+call s:hi('Statement' , 68 , '' , 'bold' , 'bold')
 
-call s:hi('StorageClass', 208, '', 'None', 'None')
-call s:hi('Structure',    81, '', 'None', 'None')
-call s:hi('Tag',          161, '', 'None', 'None')
-call s:hi('Title',        176, '', 'None', 'None')
-call s:hi('Todo',         190, 234, 'bold', 'bold')
+call s:hi('Tag'          , 161 , ''  , 'None' , 'None')
+call s:hi('Title'        , 176 , ''  , 'None' , 'None')
+call s:hi('Structure'    , 81  , ''  , 'None' , 'None')
+call s:hi('StorageClass' , 208 , ''  , 'None' , 'None')
 
-call s:hi('Type',       81, '', 'None', 'None')
-call s:hi('Typedef',    81, '', 'None', 'None')
-call s:hi('Underlined', 244, '', 'underline', 'underline')
+call s:hi('Type'       , 81  , '' , 'None'      , 'None')
+call s:hi('Typedef'    , 81  , '' , 'None'      , 'None')
+call s:hi('Underlined' , 244 , '' , 'underline' , 'underline')
 
-" VertSplit consistent with normal background to hide it
-call s:hi('VertSplit', s:n_bg, s:n_bg, 'None', 'None')
-call s:hi('VertSplit', s:n_bg, s:n_bg, 'None', 'None')
+call s:hi('VisualNOS' , '' , 238      , 'None' , 'None')
+call s:hi('Visual'    , '' , s:n_bg+2 , 'None' , 'None')
 
-call s:hi('VisualNOS', '', 238, 'None', 'None')
-call s:hi('Visual', '', s:n_bg+2, 'None', 'None')
-
-call s:hi('WildMenu', 252, 232, 'None', 'None')
-
-call s:hi('Warning',    222, s:n_bg, 'None', 'None')
-call s:hi('WarningMsg', 223, s:n_bg, 'None', 'None')
-
-call s:hi('Error',      160, s:n_bg, 'bold', 'bold')
-call s:hi('ErrorMsg',   196, s:n_bg, 'bold', 'bold')
-
-call s:hi('Comment', 30, '', 'None', 'italic')
+call s:hi('Comment'  , 30  , ''  , 'None' , 'italic')
 
 " tilde group
-call s:hi('NonText', 141, '', 'None', 'None')
-
-call s:hi('ColorColumn', '', s:n_bg-1, 'None', 'None')
+call s:hi('NonText' , 141 , '' , 'None' , 'None')
 
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
