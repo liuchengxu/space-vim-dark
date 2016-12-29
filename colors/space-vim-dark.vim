@@ -99,7 +99,7 @@ call s:hi('WildMenu' , 169 , s:n_bg+1 , 'bold' , 'bold')
 
 call s:hi('Boolean'     , 135 , '' , 'None' , 'None')
 call s:hi('Character'   , 75  , '' , 'None' , 'None')
-call s:hi('Number'      , 117 , '' , 'None' , 'None')
+call s:hi('Number'      , 111 , '' , 'None' , 'None')
 call s:hi('Float'       , 135 , '' , 'None' , 'None')
 call s:hi('String'      , 36  , '' , 'None' , 'None')
 call s:hi('Conditional' , 134 , '' , 'bold' , 'bold')
@@ -125,8 +125,8 @@ call s:hi('Operator'   , 32  , ''  , 'bold' , 'bold')
 call s:hi('Search'    , 16 , 76 , 'bold' , 'bold')
 call s:hi('IncSearch' , 16 , 76 , 'bold' , 'bold')
 
-call s:hi('PreCondit' , 118 , '' , 'bold' , 'bold')
-call s:hi('PreProc'   , 72  , '' , 'bold' , 'bold')
+call s:hi('PreCondit' , 139 , '' , 'None' , 'None')
+call s:hi('PreProc'   , 176  , '' , 'None' , 'None')
 call s:hi('Question'  , 81  , '' , 'None' , 'None')
 call s:hi('Repeat'    , 31  , '' , 'bold' , 'bold')
 
@@ -147,13 +147,13 @@ call s:hi('PmenuThumb' , 160 , 97  , 'None' , 'None')
 
 " SignColumn may relate to ale sign
 call s:hi('SignColumn' , 118 , s:n_bg , 'None' , 'None')
-call s:hi('Todo'       , 190 , s:n_bg , 'bold' , 'bold')
+call s:hi('Todo'       , 172 , s:n_bg , 'bold' , 'bold')
 
 " VertSplit consistent with normal background to hide it
 call s:hi('VertSplit' , s:n_bg , s:n_bg , 'None' , 'None')
 
-call s:hi('Warning'    , 222 , s:n_bg , 'None' , 'None')
-call s:hi('WarningMsg' , 222 , s:n_bg , 'None' , 'None')
+call s:hi('Warning'    , 222 , s:n_bg , 'bold' , 'bold')
+call s:hi('WarningMsg' , 222 , s:n_bg , 'bold' , 'bold')
 
 call s:hi('Error'    , 160 , s:n_bg , 'bold' , 'bold')
 call s:hi('ErrorMsg' , 196 , s:n_bg , 'bold' , 'bold')
