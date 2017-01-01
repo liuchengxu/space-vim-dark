@@ -95,6 +95,10 @@ call s:hi('ColorColumn' , '' , s:n_bg-1 , 'None' , 'None')
 call s:hi('StatusLine'   , 140 , s:n_bg+2 , 'None' , 'None')
 call s:hi('StatusLineNC' , 244 , s:n_bg+1 , 'None' , 'None')
 
+call s:hi('TabLine'     , 250 , s:n_bg+4 , 'None' , 'None')
+call s:hi('TabLineSel'  , 140 , s:n_bg+1 , 'None' , 'None')
+call s:hi('TabLineFill' , 145 , s:n_bg+2 , 'None' , 'None')
+
 call s:hi('WildMenu' , 169 , s:n_bg+1 , 'bold' , 'bold')
 
 call s:hi('Boolean'     , 135 , '' , 'None' , 'None')
