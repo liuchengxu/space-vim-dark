@@ -145,7 +145,7 @@ call s:hi('MoreMsg'  , 229 , '' , 'None' , 'None')
 
 " Popup menu
 call s:hi('Pmenu'      , 141 , 235 , 'None' , 'None')
-call s:hi('PmenuSel'   , 251 , 97  , 'bold' , 'bold')
+call s:hi('PmenuSel'   , 251 , 97  , 'None' , 'None')
 call s:hi('PmenuSbar'  , 28  , 233 , 'None' , 'None')
 call s:hi('PmenuThumb' , 160 , 97  , 'None' , 'None')
 
@@ -195,19 +195,27 @@ call s:hi('Comment'  , 30  , ''  , 'None' , 'italic')
 call s:hi('NonText' , 141 , '' , 'None' , 'None')
 
 " Add support for true color
-hi Normal  guibg=#292b2e
+hi Normal     guibg=#292b2e
+hi Todo       guibg=#292b2e
+hi SignColumn guibg=#292b2e
+hi VertSplit  guibg=#292b2e
 hi keyword guibg=#4f97d7
 hi Type    guifg=#ce537a
 hi LineNr  guifg=#44505c
 hi String  guifg=#2d9574
 
-hi Pmenu    guifg=#9a9aba guibg=#34323e
-hi PmenuSel guifg=#5e5079
+hi CursorLine guibg=#212026
 
-hi Error    guifg=#e0211d
+hi Pmenu    guifg=#9a9aba guibg=#34323e
+hi PmenuSel guibg=#5e5079
+
+hi Error    guifg=#e0211d guibg=#292b2e
+hi Warning  guifg=#dc752f guibg=#292b2e
 hi Function guifg=#bc6ec5
 hi Const    guifg=#a45bad
-hi Warning  guifg=#dc752f
+
+hi MatchParen guifg=#86dc2f
+
 
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
