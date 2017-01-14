@@ -194,6 +194,24 @@ call s:hi('Comment'  , 30  , ''  , 'None' , 'italic')
 " tilde group
 call s:hi('NonText' , 141 , '' , 'None' , 'None')
 
+" Add support for true color
+hi Normal  guibg=#292b2e
+hi keyword guibg=#4f97d7
+hi Type    guifg=#ce537a
+hi LineNr  guifg=#44505c
+hi String  guifg=#2d9574
+
+hi Pmenu    guifg=#9a9aba guibg=#34323e
+hi PmenuSel guifg=#5e5079
+
+hi Error    guifg=#e0211d
+hi Function guifg=#bc6ec5
+hi Const    guifg=#a45bad
+hi Warning  guifg=#dc752f
+
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
 set background=dark
+
+delf s:hi
+unlet s:colors_name s:n_bg
