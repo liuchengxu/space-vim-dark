@@ -80,16 +80,36 @@ endfunction
 
 let s:n_bg = 235
 
+" For GUI
+let s:aqua       = "#2d9574"
+let s:aqua-bg    = "#293235"
+let s:green      = "#67b11d"
+let s:green-bg   = "#293235"
+let s:green-bg-s = "#29422d"
+let s:cyan       = "#28def0"
+let s:red        = "#f2241f"
+let s:red-bg     = "#3c2a2c"
+let s:red-bg-s   = "#512e31"
+let s:blue       = "#4f97d7"
+let s:blue-bg    = "#293239"
+let s:magenta    = "#a31db1"
+let s:yellow     = "#b1951d"
+let s:yellow-bg  = "#32322c"
+
 call s:hi('Normal' , 249 , s:n_bg , 'None' , 'None' )
+hi Normal       guibg=#292b2e
 
 call s:hi('Cursor' , 88 , 214 , 'bold' , 'bold')
+hi Cursor       guifg=#e3dedd
 
 call s:hi('LineNr'       , 238 , s:n_bg-1 , 'None' , 'None' )
 call s:hi('CursorLine'   , ''  , s:n_bg-1 , 'None' , 'None' )
 call s:hi('CursorLineNr' , 134 , s:n_bg-1 , 'None' , 'None' )
 call s:hi('CursorColumn' , ''  , s:n_bg-1 , 'None' , 'None')
-
-call s:hi('ColorColumn' , '' , s:n_bg-1 , 'None' , 'None')
+hi LineNr       guifg=#44505c guibg=#212026
+hi CursorLine                 guibg=#212026
+hi CursorLineNr               guibg=#212026
+hi CursorColumn               guibg=#212026
 
 " bug. opposite here.
 call s:hi('StatusLine'   , 140 , s:n_bg+2 , 'None' , 'None')
@@ -100,6 +120,7 @@ call s:hi('TabLineSel'  , 140 , s:n_bg+1 , 'None' , 'None')
 call s:hi('TabLineFill' , 145 , s:n_bg+2 , 'None' , 'None')
 
 call s:hi('WildMenu' , 169 , s:n_bg+1 , 'bold' , 'bold')
+hi WildMenu guifg=#a31db1
 
 call s:hi('Boolean'     , 135 , '' , 'None' , 'None')
 call s:hi('Character'   , 75  , '' , 'None' , 'None')
@@ -111,6 +132,8 @@ call s:hi('Constant'    , 135 , '' , 'bold' , 'bold')
 call s:hi('Debug'       , 225 , '' , 'bold' , 'bold')
 call s:hi('Define'      , 81  , '' , 'None' , 'None')
 call s:hi('Delimiter'   , 241 , '' , 'None' , 'None')
+hi String          guifg=#2d9574
+hi Constant        guifg=#a45bad
 
 call s:hi('DiffAdd'    , ''  , 24  , 'None' , 'None')
 call s:hi('DiffChange' , 181 , 239 , 'None' , 'None')
@@ -125,9 +148,8 @@ call s:hi('Function'   , 168 , ''  , 'bold' , 'bold')
 call s:hi('Identifier' , 98  , ''  , 'bold' , 'bold')
 call s:hi('Ignore'     , 244 , 233 , 'None' , 'None')
 call s:hi('Operator'   , 67 , ''  , 'bold' , 'bold')
+hi Function     guifg=#bc6ec5
 
-call s:hi('Search'    , 16 , 76 , 'bold' , 'bold')
-call s:hi('IncSearch' , 16 , 76 , 'bold' , 'bold')
 
 call s:hi('PreCondit' , 139 , '' , 'None' , 'None')
 call s:hi('PreProc'   , 176  , '' , 'None' , 'None')
@@ -137,30 +159,42 @@ call s:hi('Repeat'    , 31  , '' , 'bold' , 'bold')
 call s:hi('Keyword' , 62  , '' , 'bold' , 'bold,italic')
 call s:hi('Label'   , 104 , '' , 'None' , 'None')
 call s:hi('Macro'   , 110 , '' , 'None' , 'None')
+hi keyword      guifg=#4f97d7
 
+call s:hi('Search'    , 16 , 76 , 'bold' , 'bold')
+call s:hi('IncSearch' , 16 , 76 , 'bold' , 'bold')
 call s:hi('MatchParen', 46, s:n_bg-1, 'bold,underline', 'bold,underline')
+hi Search       guifg=#292b2e guibg=#86dc2f
+hi MatchParen   guifg=#86dc2f
 
 call s:hi('ModeMsg'  , 229 , '' , 'None' , 'None')
-call s:hi('MoreMsg'  , 229 , '' , 'None' , 'None')
+hi ModeMsg guifg=#b1951d
 
 " Popup menu
 call s:hi('Pmenu'      , 141 , 235 , 'None' , 'None')
 call s:hi('PmenuSel'   , 251 , 97  , 'None' , 'None')
 call s:hi('PmenuSbar'  , 28  , 233 , 'None' , 'None')
 call s:hi('PmenuThumb' , 160 , 97  , 'None' , 'None')
+hi Pmenu        guifg=#9a9aba guibg=#34323e
+hi PmenuSel     guifg=#b2b2b2 guibg=#5e5079
 
 " SignColumn may relate to ale sign
 call s:hi('SignColumn' , 118 , s:n_bg , 'None' , 'None')
 call s:hi('Todo'       , 172 , s:n_bg , 'bold' , 'bold')
+hi Todo         guibg=#292b2e
+hi SignColumn   guibg=#292b2e
 
 " VertSplit consistent with normal background to hide it
 call s:hi('VertSplit' , s:n_bg , s:n_bg , 'None' , 'None')
+hi VertSplit    guibg=#292b2e
 
 call s:hi('Warning'    , 222 , s:n_bg , 'bold' , 'bold')
 call s:hi('WarningMsg' , 222 , s:n_bg , 'bold' , 'bold')
+hi Warning      guifg=#dc752f guibg=#292b2e
 
 call s:hi('Error'    , 160 , s:n_bg , 'bold' , 'bold')
 call s:hi('ErrorMsg' , 196 , s:n_bg , 'bold' , 'bold')
+hi Error        guifg=#e0211d guibg=#292b2e
 
 call s:hi('Special'        , 81  , '' , 'None' , 'None')
 call s:hi('SpecialKey'     , 59  , '' , 'None' , 'None')
@@ -185,41 +219,21 @@ call s:hi('StorageClass' , 208 , ''  , 'None' , 'None')
 call s:hi('Type'       , 81  , '' , 'None'      , 'None')
 call s:hi('Typedef'    , 81  , '' , 'None'      , 'None')
 call s:hi('Underlined' , 244 , '' , 'underline' , 'underline')
+hi Type         guifg=#ce537a
 
+call s:hi('Visual'    , '' , s:n_bg+3 , 'None' , 'None')
 call s:hi('VisualNOS' , '' , 238      , 'None' , 'None')
-call s:hi('Visual'    , '' , s:n_bg+2 , 'None' , 'None')
 
 call s:hi('Comment'  , 30  , ''  , 'None' , 'italic')
+hi Comment guifg=#2aa1ae
 
 " tilde group
 call s:hi('NonText' , 141 , '' , 'None' , 'None')
-
-" Add support for true color
-hi Normal     guibg=#292b2e
-hi Todo       guibg=#292b2e
-hi SignColumn guibg=#292b2e
-hi VertSplit  guibg=#292b2e
-hi keyword guibg=#4f97d7
-hi Type    guifg=#ce537a
-hi LineNr  guifg=#44505c
-hi String  guifg=#2d9574
-
-hi CursorLine guibg=#212026
-
-hi Pmenu    guifg=#9a9aba guibg=#34323e
-hi PmenuSel guibg=#5e5079
-
-hi Error    guifg=#e0211d guibg=#292b2e
-hi Warning  guifg=#dc752f guibg=#292b2e
-hi Function guifg=#bc6ec5
-hi Const    guifg=#a45bad
-
-hi MatchParen guifg=#86dc2f
-
+hi NonText guifg=#68727c
 
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
 set background=dark
 
 delf s:hi
-unlet s:colors_name s:n_bg
+unlet s:color_map s:n_bg
