@@ -16,7 +16,7 @@ let s:N2 = [ '#d75fd7' , '#4e4e4e' , 170 , 239 ]
 let s:N3 = [ '#c6c6c6' , '#3a3a3a' , 251, 237 ]
 
 " Insert mode                                    " fg             & bg
-let s:I1 = [ '#dadada' , '#00af5f' , 253  , 35 ]
+let s:I1 = [ '#CACFD2' , '#009966' , 253  , 35 ]
 let s:I2 = [ '#d75fd7' , '#4e4e4e' , 170 , 239  ]
 let s:I3 = [ '#c6c6c6' , '#3a3a3a' , 251  , 237  ]
 

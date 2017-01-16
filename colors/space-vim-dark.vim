@@ -104,7 +104,7 @@ call s:hi('TabLineSel'  , 140 , s:n_bg+1 , 'None' , 'None')
 call s:hi('TabLineFill' , 145 , s:n_bg+2 , 'None' , 'None')
 
 call s:hi('WildMenu' , 169 , s:n_bg+1 , 'bold' , 'bold')
-hi WildMenu guifg=#a31db1
+hi WildMenu guifg=#FF4848
 
 call s:hi('Boolean'     , 135 , '' , 'None' , 'None')
 call s:hi('Character'   , 75  , '' , 'None' , 'None')
@@ -122,7 +122,7 @@ hi Number          guifg=#E697E6
 hi Float           guifg=#6755E3
 hi String          guifg=#2d9574
 hi Conditional     guifg=#9191FF
-hi Constant        guifg=#a45bad
+hi Constant        guifg=#7BA7E1
 hi Debug           guifg=#FFC8C8
 hi Define          guifg=#D881ED
 hi Delimiter       guifg=#74BAAC
@@ -135,11 +135,12 @@ call s:hi('DiffText'   , ''  , 102 , 'None' , 'None')
 call s:hi('Directory'  , 67  , ''  , 'bold' , 'bold')
 call s:hi('Exception'  , 118 , ''  , 'bold' , 'bold')
 call s:hi('FoldColumn' , 67  , 16  , 'None' , 'None')
-call s:hi('Folded'     , 67  , 16  , 'None' , 'None')
+call s:hi('Folded'     , 67  , 16  , 'Bold' , 'Bold')
 call s:hi('Function'   , 168 , ''  , 'bold' , 'bold')
 call s:hi('Identifier' , 98  , ''  , 'None' , 'None')
 call s:hi('Ignore'     , 244 , 233 , 'None' , 'None')
 call s:hi('Operator'   , 67 , ''  , 'None' , 'None')
+hi Folded       guifg=#59955C guibg=#273746
 hi Function     guifg=#bc6ec5
 hi Identifier   guifg=#E994AB
 hi Ignore       guifg=#B4D1B6
@@ -157,7 +158,7 @@ hi Repeat       guifg=#8282FF
 call s:hi('Keyword' , 62  , '' , 'bold' , 'bold,italic')
 call s:hi('Label'   , 104 , '' , 'None' , 'None')
 call s:hi('Macro'   , 110 , '' , 'None' , 'None')
-hi keyword      guifg=#4f97d7
+hi keyword      guifg=#E469FE
 hi Label        guifg=#DFB0FF
 
 call s:hi('Search'    , 16 , 76 , 'bold' , 'bold')
@@ -203,9 +204,9 @@ call s:hi('Special'        , 81  , '' , 'None' , 'None')
 call s:hi('SpecialKey'     , 59  , '' , 'None' , 'None')
 call s:hi('SpecialChar'    , 171 , '' , 'bold' , 'bold')
 call s:hi('SpecialComment' , 245 , '' , 'bold' , 'bold')
-hi Special guifg=#FF68DD
-hi SpecialKey guifg=#FF73B9
-hi SpecialChar guifg=#6094DB
+hi Special        guifg=#FF68DD
+hi SpecialKey     guifg=#FF73B9
+hi SpecialChar    guifg=#6094DB
 hi SpecialComment guifg=#ED9EFE
 
 " marks column
@@ -232,14 +233,14 @@ hi Typedef      guifg=#ce537a
 
 call s:hi('Visual'    , '' , s:n_bg+3 , 'None' , 'None')
 call s:hi('VisualNOS' , '' , 238      , 'None' , 'None')
-hi Visual guibg=#100a14
+hi Visual guibg=#333366
 
 call s:hi('Comment'  , 30  , ''  , 'None' , 'italic')
 hi Comment guifg=#2aa1ae
 
 " tilde group
 call s:hi('NonText' , 141 , '' , 'None' , 'None')
-hi NonText guifg=#68727c
+hi NonText guifg=#534B5D
 
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
