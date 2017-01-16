@@ -80,22 +80,6 @@ endfunction
 
 let s:n_bg = 235
 
-" For GUI
-let s:aqua       = "#2d9574"
-let s:aqua-bg    = "#293235"
-let s:green      = "#67b11d"
-let s:green-bg   = "#293235"
-let s:green-bg-s = "#29422d"
-let s:cyan       = "#28def0"
-let s:red        = "#f2241f"
-let s:red-bg     = "#3c2a2c"
-let s:red-bg-s   = "#512e31"
-let s:blue       = "#4f97d7"
-let s:blue-bg    = "#293239"
-let s:magenta    = "#a31db1"
-let s:yellow     = "#b1951d"
-let s:yellow-bg  = "#32322c"
-
 call s:hi('Normal' , 249 , s:n_bg , 'None' , 'None' )
 hi Normal       guibg=#292b2e
 
@@ -132,8 +116,16 @@ call s:hi('Constant'    , 135 , '' , 'bold' , 'bold')
 call s:hi('Debug'       , 225 , '' , 'bold' , 'bold')
 call s:hi('Define'      , 81  , '' , 'None' , 'None')
 call s:hi('Delimiter'   , 241 , '' , 'None' , 'None')
+hi Boolean         guifg=#FF68DD
+hi Character       guifg=#FF62B0
+hi Number          guifg=#E697E6
+hi Float           guifg=#6755E3
 hi String          guifg=#2d9574
+hi Conditional     guifg=#9191FF
 hi Constant        guifg=#a45bad
+hi Debug           guifg=#FFC8C8
+hi Define          guifg=#D881ED
+hi Delimiter       guifg=#74BAAC
 
 call s:hi('DiffAdd'    , ''  , 24  , 'None' , 'None')
 call s:hi('DiffChange' , 181 , 239 , 'None' , 'None')
@@ -145,21 +137,28 @@ call s:hi('Exception'  , 118 , ''  , 'bold' , 'bold')
 call s:hi('FoldColumn' , 67  , 16  , 'None' , 'None')
 call s:hi('Folded'     , 67  , 16  , 'None' , 'None')
 call s:hi('Function'   , 168 , ''  , 'bold' , 'bold')
-call s:hi('Identifier' , 98  , ''  , 'bold' , 'bold')
+call s:hi('Identifier' , 98  , ''  , 'None' , 'None')
 call s:hi('Ignore'     , 244 , 233 , 'None' , 'None')
-call s:hi('Operator'   , 67 , ''  , 'bold' , 'bold')
+call s:hi('Operator'   , 67 , ''  , 'None' , 'None')
 hi Function     guifg=#bc6ec5
-
+hi Identifier   guifg=#E994AB
+hi Ignore       guifg=#B4D1B6
+hi Operator     guifg=#E697E6
 
 call s:hi('PreCondit' , 139 , '' , 'None' , 'None')
 call s:hi('PreProc'   , 176  , '' , 'None' , 'None')
 call s:hi('Question'  , 81  , '' , 'None' , 'None')
 call s:hi('Repeat'    , 31  , '' , 'bold' , 'bold')
+hi PreCondit    guifg=#D698FE
+hi PreProc      guifg=#DD75DD
+hi Question     guifg=#F9BB00
+hi Repeat       guifg=#8282FF
 
 call s:hi('Keyword' , 62  , '' , 'bold' , 'bold,italic')
 call s:hi('Label'   , 104 , '' , 'None' , 'None')
 call s:hi('Macro'   , 110 , '' , 'None' , 'None')
 hi keyword      guifg=#4f97d7
+hi Label        guifg=#DFB0FF
 
 call s:hi('Search'    , 16 , 76 , 'bold' , 'bold')
 call s:hi('IncSearch' , 16 , 76 , 'bold' , 'bold')
@@ -177,6 +176,8 @@ call s:hi('PmenuSbar'  , 28  , 233 , 'None' , 'None')
 call s:hi('PmenuThumb' , 160 , 97  , 'None' , 'None')
 hi Pmenu        guifg=#9a9aba guibg=#34323e
 hi PmenuSel     guifg=#b2b2b2 guibg=#5e5079
+hi PmenuSbar    guifg=#CB59E8
+hi PmenuThumb   guifg=#D881ED
 
 " SignColumn may relate to ale sign
 call s:hi('SignColumn' , 118 , s:n_bg , 'None' , 'None')
@@ -191,15 +192,21 @@ hi VertSplit    guibg=#292b2e
 call s:hi('Warning'    , 222 , s:n_bg , 'bold' , 'bold')
 call s:hi('WarningMsg' , 222 , s:n_bg , 'bold' , 'bold')
 hi Warning      guifg=#dc752f guibg=#292b2e
+hi WarningMsg   guifg=#dc752f guibg=#292b2e
 
 call s:hi('Error'    , 160 , s:n_bg , 'bold' , 'bold')
 call s:hi('ErrorMsg' , 196 , s:n_bg , 'bold' , 'bold')
 hi Error        guifg=#e0211d guibg=#292b2e
+hi ErrorMsg     guifg=#e0211d guibg=#292b2e
 
 call s:hi('Special'        , 81  , '' , 'None' , 'None')
 call s:hi('SpecialKey'     , 59  , '' , 'None' , 'None')
-call s:hi('SpecialChar'    , 161 , '' , 'bold' , 'bold')
+call s:hi('SpecialChar'    , 171 , '' , 'bold' , 'bold')
 call s:hi('SpecialComment' , 245 , '' , 'bold' , 'bold')
+hi Special guifg=#FF68DD
+hi SpecialKey guifg=#FF73B9
+hi SpecialChar guifg=#6094DB
+hi SpecialComment guifg=#ED9EFE
 
 " marks column
 if has('spell')
@@ -210,19 +217,22 @@ if has('spell')
 endif
 
 call s:hi('Statement' , 68 , '' , 'bold' , 'bold')
+hi Statement guifg=#4f97d7
 
 call s:hi('Tag'          , 161 , ''  , 'None' , 'None')
 call s:hi('Title'        , 176 , ''  , 'None' , 'None')
 call s:hi('Structure'    , 81  , ''  , 'None' , 'None')
 call s:hi('StorageClass' , 208 , ''  , 'None' , 'None')
 
-call s:hi('Type'       , 81  , '' , 'None'      , 'None')
-call s:hi('Typedef'    , 81  , '' , 'None'      , 'None')
-call s:hi('Underlined' , 244 , '' , 'underline' , 'underline')
+call s:hi('Type'       , 81 , '' , 'None'      , 'None')
+call s:hi('Typedef'    , 81 , '' , 'None'      , 'None')
+call s:hi('Underlined' , '' , '' , 'underline' , 'underline')
 hi Type         guifg=#ce537a
+hi Typedef      guifg=#ce537a
 
 call s:hi('Visual'    , '' , s:n_bg+3 , 'None' , 'None')
 call s:hi('VisualNOS' , '' , 238      , 'None' , 'None')
+hi Visual guibg=#100a14
 
 call s:hi('Comment'  , 30  , ''  , 'None' , 'italic')
 hi Comment guifg=#2aa1ae
