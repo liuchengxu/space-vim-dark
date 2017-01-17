@@ -68,12 +68,12 @@ let s:color_map = {
 
 function! s:hi(item, fg, bg, cterm_style, gui_style)
     if !empty(a:fg)
-        execute printf("hi %s ctermfg=%d guifg=%s", a:item, a:fg, s:color_map[a:fg])
+        execute printf('hi %s ctermfg=%d guifg=%s', a:item, a:fg, s:color_map[a:fg])
     endif
     if !empty(a:bg)
-        execute printf("hi %s ctermbg=%d guibg=%s", a:item, a:bg, s:color_map[a:bg])
+        execute printf('hi %s ctermbg=%d guibg=%s', a:item, a:bg, s:color_map[a:bg])
     endif
-    execute printf("hi %s cterm=%s gui=%s", a:item, a:cterm_style, a:gui_style)
+    execute printf('hi %s cterm=%s gui=%s', a:item, a:cterm_style, a:gui_style)
 endfunction
 
 " call s:hi(item, fg, bg, cterm_style, gui_style)
@@ -84,7 +84,7 @@ call s:hi('Normal' , 249 , s:n_bg , 'None' , 'None' )
 hi Normal       guibg=#292b2e
 
 call s:hi('Cursor' , 88 , 214 , 'bold' , 'bold')
-hi Cursor       guifg=#e3dedd
+hi Cursor       guifg=#330033 guibg=#FF9331
 
 call s:hi('LineNr'       , 238 , s:n_bg-1 , 'None' , 'None' )
 call s:hi('CursorLine'   , ''  , s:n_bg-1 , 'None' , 'None' )
@@ -98,6 +98,7 @@ hi CursorColumn               guibg=#212026
 " bug. opposite here.
 call s:hi('StatusLine'   , 140 , s:n_bg+2 , 'None' , 'None')
 call s:hi('StatusLineNC' , 244 , s:n_bg+1 , 'None' , 'None')
+hi StatusLineNC guibg=#3a3a3a
 
 call s:hi('TabLine'     , 250 , s:n_bg+4 , 'None' , 'None')
 call s:hi('TabLineSel'  , 140 , s:n_bg+1 , 'None' , 'None')
@@ -120,7 +121,7 @@ hi Boolean         guifg=#FF68DD
 hi Character       guifg=#FF62B0
 hi Number          guifg=#E697E6
 hi Float           guifg=#6755E3
-hi String          guifg=#2d9574
+hi String          guifg=#20af81
 hi Conditional     guifg=#9191FF
 hi Constant        guifg=#7BA7E1
 hi Debug           guifg=#FFC8C8
@@ -160,6 +161,7 @@ call s:hi('Label'   , 104 , '' , 'None' , 'None')
 call s:hi('Macro'   , 110 , '' , 'None' , 'None')
 hi keyword      guifg=#E469FE
 hi Label        guifg=#DFB0FF
+hi Macro        guifg=#8C8CFF
 
 call s:hi('Search'    , 16 , 76 , 'bold' , 'bold')
 call s:hi('IncSearch' , 16 , 76 , 'bold' , 'bold')
@@ -224,6 +226,10 @@ call s:hi('Tag'          , 161 , ''  , 'None' , 'None')
 call s:hi('Title'        , 176 , ''  , 'None' , 'None')
 call s:hi('Structure'    , 81  , ''  , 'None' , 'None')
 call s:hi('StorageClass' , 208 , ''  , 'None' , 'None')
+hi Tag          guifg=#E469FE
+hi Title        guifg=#DD75DD
+hi Structure    guifg=#E37795
+hi StorageClass guifg=#D881ED
 
 call s:hi('Type'       , 81 , '' , 'None'      , 'None')
 call s:hi('Typedef'    , 81 , '' , 'None'      , 'None')
