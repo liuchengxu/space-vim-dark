@@ -145,7 +145,7 @@ hi Folded       guifg=#59955C guibg=#273746
 hi Function     guifg=#bc6ec5
 hi Identifier   guifg=#E994AB
 hi Ignore       guifg=#B4D1B6
-hi Operator     guifg=#E697E6
+hi Operator     guifg=#6094DB
 
 call s:hi('PreCondit' , 139 , '' , 'None' , 'None')
 call s:hi('PreProc'   , 176  , '' , 'None' , 'None')
@@ -204,7 +204,7 @@ call s:hi('Special'        , 81  , '' , 'None' , 'None')
 call s:hi('SpecialKey'     , 59  , '' , 'None' , 'None')
 call s:hi('SpecialChar'    , 171 , '' , 'bold' , 'bold')
 call s:hi('SpecialComment' , 245 , '' , 'bold' , 'bold')
-hi Special        guifg=#FF68DD
+hi Special        guifg=#DD75DD
 hi SpecialKey     guifg=#FF73B9
 hi SpecialChar    guifg=#6094DB
 hi SpecialComment guifg=#ED9EFE
