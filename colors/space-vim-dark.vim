@@ -170,7 +170,7 @@ hi Search       guifg=#292b2e guibg=#86dc2f
 hi MatchParen   guifg=#86dc2f
 
 call s:hi('ModeMsg'  , 229 , '' , 'None' , 'None')
-hi ModeMsg guifg=#b1951d
+hi ModeMsg guifg=#FFF06A
 
 " Popup menu
 call s:hi('Pmenu'      , 141 , 235 , 'None' , 'None')
@@ -178,9 +178,7 @@ call s:hi('PmenuSel'   , 251 , 97  , 'None' , 'None')
 call s:hi('PmenuSbar'  , 28  , 233 , 'None' , 'None')
 call s:hi('PmenuThumb' , 160 , 97  , 'None' , 'None')
 hi Pmenu        guifg=#9a9aba guibg=#34323e
-hi PmenuSel     guifg=#b2b2b2 guibg=#5e5079
-hi PmenuSbar    guifg=#CB59E8
-hi PmenuThumb   guifg=#D881ED
+hi PmenuSbar    guifg=#C269FE guibg=#303030
 
 " SignColumn may relate to ale sign
 call s:hi('SignColumn' , 118 , s:n_bg , 'None' , 'None')
