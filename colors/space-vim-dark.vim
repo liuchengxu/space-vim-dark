@@ -237,7 +237,6 @@ hi Typedef      guifg=#ce537a
 
 call s:hi('Visual'    , '' , s:n_bg+3 , 'None' , 'None')
 call s:hi('VisualNOS' , '' , 238      , 'None' , 'None')
-hi Visual guibg=#333366
 
 call s:hi('Comment'  , 30  , ''  , 'None' , 'italic')
 hi Comment guifg=#2aa1ae
