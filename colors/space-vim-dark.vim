@@ -249,5 +249,21 @@ hi NonText guifg=#534B5D
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
 set background=dark
 
+"""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+"""""""""""""""""""""""""""""""""""""""""""
+" vim-indent-guides
+let g:indent_guides_auto_colors = 0
+hi IndentGuidesOdd  guibg=#708090 ctermbg=237
+hi IndentGuidesEven guibg=#696969 ctermbg=239
+
+" vim-gitgutter
+hi GitGutterAdd           guifg=#1FCB4A ctermfg=36
+hi GitGutterChange        guifg=#FFF06A ctermfg=185
+hi GitGutterDelete        guifg=#FF4848 ctermfg=124
+hi GitGutterChangeDelete  guifg=#FE67EB ctermfg=211
+
+hi ExtraWhitespace guibg=#444444 ctermbg=238
+
 delf s:hi
 unlet s:color_map s:n_bg
