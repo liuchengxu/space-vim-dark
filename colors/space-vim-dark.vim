@@ -120,7 +120,7 @@ call s:hi('Delimiter'   , 241 , '' , 'None' , 'None')
 hi Boolean         guifg=#FF68DD
 hi Character       guifg=#FF62B0
 hi Number          guifg=#E697E6
-hi Float           guifg=#6755E3
+hi Float           guifg=#B7B7FF
 hi String          guifg=#20af81
 hi Conditional     guifg=#9191FF
 hi Constant        guifg=#7BA7E1
