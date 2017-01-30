@@ -246,36 +246,59 @@ hi Comment guifg=#2aa1ae
 call s:hi('NonText' , 141 , '' , 'None' , 'None')
 hi NonText guifg=#534B5D
 
-" Must be at the end, because of ctermbg=234 bug.
-" https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
-set background=dark
+hi SVDAqua    guifg=#2d9574 ctermfg=72
+hi SVDRed     guifg=#f2241f ctermfg=160
+hi SVDBlue    guifg=#4f97d7 ctermfg=68
+hi SVDGreen   guifg=#20af81 ctermfg=36
+hi SVDYellow  guifg=#67b11d ctermfg=114
+hi SVDOrange  guifg=#b1951d ctermfg=137
+hi SVDMagenta guifg=#a31db1 ctermfg=128
+
+hi SVDAquaBold   guifg=#2d9574 ctermfg=72  gui=bold cterm=bold
+hi SVDBlueBold   guifg=#4f97d7 ctermfg=68  gui=bold cterm=bold
+hi SVDGreenBold  guifg=#20af81 ctermfg=36  gui=bold cterm=bold
+hi SVDYellowBold guifg=#67b11d ctermfg=114 gui=bold cterm=bold
+hi SVDOrangeBold guifg=#b1951d ctermfg=137 gui=bold cterm=bold
 
 """""""""""""""""""""""""""""""""""""""""""
 " Language
 """""""""""""""""""""""""""""""""""""""""""
 " markdown
-hi markdownH1 guifg=#4f97d7 gui=bold ctermfg=68  cterm=bold
-hi markdownH2 guifg=#20af81 gui=bold ctermfg=36  cterm=bold
-hi markdownH3 guifg=#67b11d gui=bold ctermfg=114 cterm=bold
-hi markdownH4 guifg=#b1951d gui=bold ctermfg=137 cterm=bold
-hi markdownH5 guifg=#4f97d7 gui=None ctermfg=68  cterm=None
-hi markdownH6 guifg=#20af81 gui=None ctermfg=36  cterm=None
+hi link markdownH1 SVDBlueBold
+hi link markdownH2 SVDGreenBold
+hi link markdownH3 SVDYellowBold
+hi link markdownH4 SVDOrangeBold
+hi link markdownH5 SVDBlue
+hi link markdownH6 SVDGreen
 
 """""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""
-" vim-indent-guides
+" vim-indent-guides {
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  guibg=#708090 ctermbg=237
 hi IndentGuidesEven guibg=#696969 ctermbg=239
+" }
 
-" vim-gitgutter
-hi GitGutterAdd           guifg=#1FCB4A ctermfg=36
-hi GitGutterChange        guifg=#FFF06A ctermfg=185
-hi GitGutterDelete        guifg=#FF4848 ctermfg=124
-hi GitGutterChangeDelete  guifg=#FE67EB ctermfg=211
+" vim-gitgutter {
+hi link GitGutterAdd          SVDGreen
+hi link GitGutterChange       SVDOrange
+hi link GitGutterDelete       SVDRed
+hi link GitGutterChangeDelete SVDMagenta
+" }
 
-hi ExtraWhitespace guibg=#444444 ctermbg=238
+" vim-markdown {
+hi link htmlH1 SVDBlueBold
+hi link htmlH2 SVDGreenBold
+hi link htmlH3 SVDYellowBold
+hi link htmlH4 SVDOrangeBold
+hi link htmlH5 SVDBlue
+hi link htmlH6 SVDGreen
+" }
 
 delf s:hi
 unlet s:color_map s:n_bg
+
+" Must be at the end, because of ctermbg=234 bug.
+" https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
+set background=dark
