@@ -144,8 +144,9 @@ call s:hi('Operator'   , 67 , ''  , 'None' , 'None')
 hi Folded       guifg=#59955C guibg=#273746
 hi Function     guifg=#bc6ec5
 hi Identifier   guifg=#E994AB
+hi Identifier   guifg=#5f87d7
 hi Ignore       guifg=#B4D1B6
-hi Operator     guifg=#6094DB
+hi Operator     guifg=#25A0C5
 
 call s:hi('PreCondit' , 139 , '' , 'None' , 'None')
 call s:hi('PreProc'   , 176  , '' , 'None' , 'None')
@@ -238,7 +239,7 @@ hi Typedef      guifg=#ce537a
 call s:hi('Visual'    , '' , s:n_bg+3 , 'None' , 'None')
 call s:hi('VisualNOS' , '' , 238      , 'None' , 'None')
 
-call s:hi('Comment'  , 30  , ''  , 'None' , 'italic')
+call s:hi('Comment'  , 30  , ''  , 'italic' , 'italic')
 hi Comment guifg=#2aa1ae
 
 " tilde group
@@ -248,6 +249,17 @@ hi NonText guifg=#534B5D
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
 set background=dark
+
+"""""""""""""""""""""""""""""""""""""""""""
+" Language
+"""""""""""""""""""""""""""""""""""""""""""
+" markdown
+hi markdownH1 guifg=#4f97d7 gui=bold ctermfg=68  cterm=bold
+hi markdownH2 guifg=#20af81 gui=bold ctermfg=36  cterm=bold
+hi markdownH3 guifg=#67b11d gui=bold ctermfg=114 cterm=bold
+hi markdownH4 guifg=#b1951d gui=bold ctermfg=137 cterm=bold
+hi markdownH5 guifg=#4f97d7 gui=None ctermfg=68  cterm=None
+hi markdownH6 guifg=#20af81 gui=None ctermfg=36  cterm=None
 
 """""""""""""""""""""""""""""""""""""""""""
 " Plugins
