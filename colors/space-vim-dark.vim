@@ -246,6 +246,11 @@ hi Comment guifg=#2aa1ae
 call s:hi('NonText' , 141 , '' , 'None' , 'None')
 hi NonText guifg=#534B5D
 
+hi SVDDark1   guifg=#3c3836 ctermfg=237
+hi SVDDark2   guifg=#504945 ctermfg=239
+hi SVDDark3   guifg=#665c54 ctermfg=241
+hi SVDDark4   guifg=#7c6f64 ctermfg=243
+
 hi SVDAqua    guifg=#2d9574 ctermfg=72
 hi SVDRed     guifg=#f2241f ctermfg=160
 hi SVDBlue    guifg=#4f97d7 ctermfg=68
@@ -294,6 +299,18 @@ hi link htmlH3 SVDYellowBold
 hi link htmlH4 SVDOrangeBold
 hi link htmlH5 SVDBlue
 hi link htmlH6 SVDGreen
+" }
+
+" vim-signify {
+hi link SignifySignAdd    SVDGreen
+hi link SignifySignChange SVDAqua
+hi link SignifySignDelete SVDRed
+" }
+
+" vim-startify {
+hi! link StartifyFile SVDBlue
+hi! link StartifySection SVDBlueBold
+hi! link StartifyHeader Define
 " }
 
 delf s:hi
