@@ -239,7 +239,7 @@ hi Typedef      guifg=#ce537a
 call s:hi('Visual'    , '' , s:n_bg+3 , 'None' , 'None')
 call s:hi('VisualNOS' , '' , 238      , 'None' , 'None')
 
-call s:hi('Comment'  , 30  , ''  , 'italic' , 'italic')
+call s:hi('Comment'  , 30  , ''  , 'None' , 'italic')
 hi Comment guifg=#2aa1ae
 
 " tilde group
