@@ -308,9 +308,14 @@ hi link SignifySignDelete SVDRed
 " }
 
 " vim-startify {
-hi! link StartifyFile SVDBlue
-hi! link StartifySection SVDBlueBold
-hi! link StartifyHeader Define
+hi link StartifyFile    Normal
+hi link StartifySection SVDBlueBold
+hi link StartifyHeader  Define
+" }
+
+" YouCompleteMe {
+hi YcmErrorSection   guibg=#800080 guifg=#b2b2b2 ctermbg=5  ctermfg=249
+hi YcmWarningSection guibg=#5f5f87 guifg=#b2b2b2 ctermbg=60 ctermfg=249
 " }
 
 delf s:hi
