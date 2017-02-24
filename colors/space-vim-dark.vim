@@ -211,12 +211,10 @@ hi SpecialChar    guifg=#6094DB
 hi SpecialComment guifg=#ED9EFE
 
 " marks column
-if has('spell')
-    call s:hi('SpellBad'   , '' , 52 , 'None'    , 'None')
-    call s:hi('SpellCap'   , '' , 17 , 'None'    , 'None')
-    call s:hi('SpellLocal' , '' , 17 , 'None'    , 'None')
-    call s:hi('SpellBad'   , '' , 52 , 'reverse' , 'None')
-endif
+call s:hi('SpellBad'   , 168 , '' , 'underline'    , 'undercurl')
+call s:hi('SpellCap'   , 110 , '' , 'underline'    , 'undercurl')
+call s:hi('SpellLocal' , 253 , '' , 'underline'    , 'undercurl')
+call s:hi('SpellRare'  , 218 , '' , 'underline'    , 'undercurl')
 
 call s:hi('Statement' , 68 , '' , 'bold' , 'bold')
 hi Statement guifg=#4f97d7
