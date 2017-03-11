@@ -174,7 +174,7 @@ call s:hi('ModeMsg'  , 229 , '' , 'None' , 'None')
 hi ModeMsg guifg=#FFF06A
 
 " Popup menu
-call s:hi('Pmenu'      , 141 , 235 , 'None' , 'None')
+call s:hi('Pmenu'      , 141 , 236 , 'None' , 'None')
 call s:hi('PmenuSel'   , 251 , 97  , 'None' , 'None')
 call s:hi('PmenuSbar'  , 28  , 233 , 'None' , 'None')
 call s:hi('PmenuThumb' , 160 , 97  , 'None' , 'None')
