@@ -26,4 +26,4 @@ Terminal with `set termguicolors`:
 
 Terminal with 256 colors:
 
-![screenshot](https://github.com/liuchengxu/space-vim/blob/master/docs/img/screenshot.png?raw=true)
+![screenshot](https://github.com/liuchengxu/space-vim/blob/gh-pages/docs/img/screenshot.png?raw=true)
