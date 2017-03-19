@@ -245,6 +245,7 @@ hi Comment guifg=#2aa1ae
 call s:hi('NonText' , 141 , '' , 'None' , 'None')
 hi NonText guifg=#534B5D
 
+hi SVDNormal  guifg=#b2b2b2 ctermfg=249
 hi SVDDark1   guifg=#3c3836 ctermfg=237
 hi SVDDark2   guifg=#504945 ctermfg=239
 hi SVDDark3   guifg=#665c54 ctermfg=241
@@ -315,6 +316,12 @@ hi link StartifyHeader  Define
 " YouCompleteMe {
 hi YcmErrorSection   guibg=#800080 guifg=#b2b2b2 ctermbg=5  ctermfg=249
 hi YcmWarningSection guibg=#5f5f87 guifg=#b2b2b2 ctermbg=60 ctermfg=249
+" }
+
+" vim-leader-guide {
+hi link LeaderGuideDesc SVDNormal
+hi link LeaderGuideKeys Function
+hi link LeaderGuideBrackets SVDGreen
 " }
 
 delf s:hi
