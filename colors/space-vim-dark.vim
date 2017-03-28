@@ -134,7 +134,7 @@ call s:hi('DiffDelete' , 162 , 53  , 'None' , 'None')
 call s:hi('DiffText'   , ''  , 102 , 'None' , 'None')
 
 call s:hi('Directory'  , 67  , ''  , 'bold' , 'bold')
-call s:hi('Exception'  , 118 , ''  , 'bold' , 'bold')
+call s:hi('Exception'  , 137 , ''  , 'bold' , 'bold')
 call s:hi('FoldColumn' , 67  , 16  , 'None' , 'None')
 call s:hi('Folded'     , 67  , 16  , 'Bold' , 'Bold')
 call s:hi('Function'   , 168 , ''  , 'bold' , 'bold')
@@ -275,6 +275,10 @@ hi link markdownH3 SVDYellowBold
 hi link markdownH4 SVDOrangeBold
 hi link markdownH5 SVDBlue
 hi link markdownH6 SVDGreen
+
+" cpp
+hi cppExceptions       ctermfg=207 guifg=#CC3366 cterm=bold gui=bold
+hi link cppSTLexception cppExceptions
 
 """""""""""""""""""""""""""""""""""""""""""
 " Plugins
