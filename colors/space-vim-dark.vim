@@ -100,8 +100,8 @@ call s:hi('StatusLine'   , 140 , s:n_bg+2 , 'None' , 'None')
 call s:hi('StatusLineNC' , 244 , s:n_bg+1 , 'None' , 'None')
 hi StatusLineNC guibg=#3a3a3a
 
-call s:hi('TabLine'     , 250 , s:n_bg+4 , 'None' , 'None')
-call s:hi('TabLineSel'  , 140 , s:n_bg+1 , 'None' , 'None')
+call s:hi('TabLine'     , 66  , s:n_bg+3 , 'None' , 'None')
+call s:hi('TabLineSel'  , 178 , s:n_bg+4 , 'None' , 'None')
 call s:hi('TabLineFill' , 145 , s:n_bg+2 , 'None' , 'None')
 
 call s:hi('WildMenu' , 169 , s:n_bg+1 , 'bold' , 'bold')
@@ -168,7 +168,7 @@ call s:hi('Search'    , 16 , 76 , 'bold' , 'bold')
 call s:hi('IncSearch' , 16 , 76 , 'bold' , 'bold')
 call s:hi('MatchParen', 10, s:n_bg-1, 'bold,underline', 'bold,underline')
 hi Search       guifg=#292b2e guibg=#86dc2f
-hi MatchParen   guifg=#00ff00 guibg=#292b2e
+hi MatchParen   guifg=#00ff00 guibg=NONE
 
 call s:hi('ModeMsg'  , 229 , '' , 'None' , 'None')
 hi ModeMsg guifg=#FFF06A
@@ -184,22 +184,22 @@ hi PmenuSbar    guifg=#C269FE guibg=#303030
 " SignColumn may relate to ale sign
 call s:hi('SignColumn' , 118 , s:n_bg , 'None' , 'None')
 call s:hi('Todo'       , 172 , s:n_bg , 'bold' , 'bold')
-hi Todo         guibg=#292b2e
-hi SignColumn   guibg=#292b2e
+hi Todo         guibg=NONE
+hi SignColumn   guibg=NONE
 
 " VertSplit consistent with normal background to hide it
 call s:hi('VertSplit' , s:n_bg , s:n_bg , 'None' , 'None')
-hi VertSplit    guibg=#292b2e
+hi VertSplit    guibg=NONE
 
 call s:hi('Warning'    , 222 , s:n_bg , 'bold' , 'bold')
 call s:hi('WarningMsg' , 222 , s:n_bg , 'bold' , 'bold')
-hi Warning      guifg=#dc752f guibg=#292b2e
-hi WarningMsg   guifg=#dc752f guibg=#292b2e
+hi Warning      guifg=#dc752f guibg=NONE
+hi WarningMsg   guifg=#dc752f guibg=NONE
 
 call s:hi('Error'    , 160 , s:n_bg , 'bold' , 'bold')
 call s:hi('ErrorMsg' , 196 , s:n_bg , 'bold' , 'bold')
-hi Error        guifg=#e0211d guibg=#292b2e
-hi ErrorMsg     guifg=#e0211d guibg=#292b2e
+hi Error        guifg=#e0211d guibg=NONE
+hi ErrorMsg     guifg=#e0211d guibg=NONE
 
 call s:hi('Special'        , 81  , '' , 'None' , 'None')
 call s:hi('SpecialKey'     , 59  , '' , 'None' , 'None')
