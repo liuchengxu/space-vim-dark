@@ -242,7 +242,7 @@ call s:hi('Comment'  , 30  , ''  , 'None' , 'italic')
 hi Comment guifg=#2aa1ae
 
 " tilde group
-call s:hi('NonText' , 141 , '' , 'None' , 'None')
+call s:hi('NonText' , 241 , '' , 'None' , 'None')
 hi NonText guifg=#534B5D
 
 hi SVDNormal  guifg=#b2b2b2 ctermfg=249
