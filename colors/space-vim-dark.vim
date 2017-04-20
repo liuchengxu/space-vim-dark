@@ -114,7 +114,7 @@ call s:hi('Float'       , 135 , '' , 'None' , 'None')
 call s:hi('String'      , 36  , '' , 'None' , 'None')
 call s:hi('Conditional' , 134 , '' , 'None' , 'None')
 call s:hi('Constant'    , 135 , '' , 'None' , 'None')
-call s:hi('Debug'       , 225 , '' , 'bold' , 'bold')
+call s:hi('Debug'       , 225 , '' , 'None' , 'None')
 call s:hi('Define'      , 177 , '' , 'None' , 'None')
 call s:hi('Delimiter'   , 241 , '' , 'None' , 'None')
 hi Boolean         guifg=#FF68DD
@@ -137,7 +137,7 @@ call s:hi('Directory'  , 67  , ''  , 'bold' , 'bold')
 call s:hi('Exception'  , 137 , ''  , 'bold' , 'bold')
 call s:hi('FoldColumn' , 67  , 16  , 'None' , 'None')
 call s:hi('Folded'     , 67  , 16  , 'Bold' , 'Bold')
-call s:hi('Function'   , 168 , ''  , 'bold' , 'bold')
+call s:hi('Function'   , 132 , ''  , 'bold' , 'bold')
 call s:hi('Identifier' , 133 , ''  , 'None' , 'None')
 call s:hi('Ignore'     , 244 , 233 , 'None' , 'None')
 call s:hi('Operator'   , 67  , ''  , 'None' , 'None')
@@ -163,6 +163,15 @@ call s:hi('Macro'   , 110 , '' , 'None' , 'None')
 hi keyword      guifg=#E469FE
 hi Label        guifg=#DFB0FF
 hi Macro        guifg=#8C8CFF
+
+call s:hi('Type'       , 169 , '' , 'None'      , 'None')
+call s:hi('Typedef'    , 204 , '' , 'None'      , 'None')
+call s:hi('Underlined' , '' , '' , 'underline' , 'underline')
+hi Type         guifg=#ce537a
+hi Typedef      guifg=#ce537a
+
+call s:hi('Statement' , 68 , '' , 'None' , 'None')
+hi Statement guifg=#4f97d7
 
 call s:hi('Search'    , 16 , 76 , 'bold' , 'bold')
 call s:hi('IncSearch' , 16 , 76 , 'bold' , 'bold')
@@ -216,23 +225,14 @@ call s:hi('SpellCap'   , 110 , '' , 'underline'    , 'undercurl')
 call s:hi('SpellLocal' , 253 , '' , 'underline'    , 'undercurl')
 call s:hi('SpellRare'  , 218 , '' , 'underline'    , 'undercurl')
 
-call s:hi('Statement' , 68 , '' , 'None' , 'None')
-hi Statement guifg=#4f97d7
-
 call s:hi('Tag'          , 161 , ''  , 'None' , 'None')
 call s:hi('Title'        , 176 , ''  , 'None' , 'None')
-call s:hi('Structure'    , 81  , ''  , 'None' , 'None')
+call s:hi('Structure'    , 32  , ''  , 'None' , 'None')
 call s:hi('StorageClass' , 208 , ''  , 'None' , 'None')
 hi Tag          guifg=#E469FE
 hi Title        guifg=#DD75DD
 hi Structure    guifg=#E37795
 hi StorageClass guifg=#D881ED
-
-call s:hi('Type'       , 81 , '' , 'None'      , 'None')
-call s:hi('Typedef'    , 81 , '' , 'None'      , 'None')
-call s:hi('Underlined' , '' , '' , 'underline' , 'underline')
-hi Type         guifg=#ce537a
-hi Typedef      guifg=#ce537a
 
 call s:hi('Visual'    , '' , s:n_bg+3 , 'None' , 'None')
 call s:hi('VisualNOS' , '' , 238      , 'None' , 'None')
