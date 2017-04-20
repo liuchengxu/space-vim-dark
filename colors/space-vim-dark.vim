@@ -175,7 +175,7 @@ hi Statement guifg=#4f97d7
 
 call s:hi('Search'    , 16 , 76 , 'bold' , 'bold')
 call s:hi('IncSearch' , 16 , 76 , 'bold' , 'bold')
-call s:hi('MatchParen', 10, s:n_bg-1, 'bold,underline', 'bold,underline')
+call s:hi('MatchParen', 40 , s:n_bg-1, 'bold,underline', 'bold,underline')
 hi Search       guifg=#292b2e guibg=#86dc2f
 hi MatchParen   guifg=#00ff00 guibg=NONE
 
