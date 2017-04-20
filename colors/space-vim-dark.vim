@@ -112,10 +112,10 @@ call s:hi('Character'   , 75  , '' , 'None' , 'None')
 call s:hi('Number'      , 111 , '' , 'None' , 'None')
 call s:hi('Float'       , 135 , '' , 'None' , 'None')
 call s:hi('String'      , 36  , '' , 'None' , 'None')
-call s:hi('Conditional' , 134 , '' , 'bold' , 'bold')
-call s:hi('Constant'    , 135 , '' , 'bold' , 'bold')
+call s:hi('Conditional' , 134 , '' , 'None' , 'None')
+call s:hi('Constant'    , 135 , '' , 'None' , 'None')
 call s:hi('Debug'       , 225 , '' , 'bold' , 'bold')
-call s:hi('Define'      , 177  , '' , 'None' , 'None')
+call s:hi('Define'      , 177 , '' , 'None' , 'None')
 call s:hi('Delimiter'   , 241 , '' , 'None' , 'None')
 hi Boolean         guifg=#FF68DD
 hi Character       guifg=#FF62B0
@@ -138,9 +138,9 @@ call s:hi('Exception'  , 137 , ''  , 'bold' , 'bold')
 call s:hi('FoldColumn' , 67  , 16  , 'None' , 'None')
 call s:hi('Folded'     , 67  , 16  , 'Bold' , 'Bold')
 call s:hi('Function'   , 168 , ''  , 'bold' , 'bold')
-call s:hi('Identifier' , 98  , ''  , 'None' , 'None')
+call s:hi('Identifier' , 133 , ''  , 'None' , 'None')
 call s:hi('Ignore'     , 244 , 233 , 'None' , 'None')
-call s:hi('Operator'   , 67 , ''  , 'None' , 'None')
+call s:hi('Operator'   , 67  , ''  , 'None' , 'None')
 hi Folded       guifg=#59955C guibg=#273746
 hi Function     guifg=#bc6ec5
 hi Identifier   guifg=#E994AB
@@ -216,7 +216,7 @@ call s:hi('SpellCap'   , 110 , '' , 'underline'    , 'undercurl')
 call s:hi('SpellLocal' , 253 , '' , 'underline'    , 'undercurl')
 call s:hi('SpellRare'  , 218 , '' , 'underline'    , 'undercurl')
 
-call s:hi('Statement' , 68 , '' , 'bold' , 'bold')
+call s:hi('Statement' , 68 , '' , 'None' , 'None')
 hi Statement guifg=#4f97d7
 
 call s:hi('Tag'          , 161 , ''  , 'None' , 'None')
