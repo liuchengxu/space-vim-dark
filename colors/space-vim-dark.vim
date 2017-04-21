@@ -138,7 +138,7 @@ call s:hi('Exception'  , 137 , ''  , 'bold' , 'bold')
 call s:hi('FoldColumn' , 67  , 16  , 'None' , 'None')
 call s:hi('Folded'     , 67  , 16  , 'Bold' , 'Bold')
 call s:hi('Function'   , 132 , ''  , 'bold' , 'bold')
-call s:hi('Identifier' , 133 , ''  , 'None' , 'None')
+call s:hi('Identifier' , 168 , ''  , 'None' , 'None')
 call s:hi('Ignore'     , 244 , 233 , 'None' , 'None')
 call s:hi('Operator'   , 67  , ''  , 'None' , 'None')
 hi Folded       guifg=#59955C guibg=#273746
@@ -157,7 +157,7 @@ hi PreProc      guifg=#DD75DD
 hi Question     guifg=#F9BB00
 hi Repeat       guifg=#8282FF
 
-call s:hi('Keyword' , 62  , '' , 'bold' , 'bold,italic')
+call s:hi('Keyword' , 68  , '' , 'bold' , 'bold')
 call s:hi('Label'   , 104 , '' , 'None' , 'None')
 call s:hi('Macro'   , 110 , '' , 'None' , 'None')
 hi keyword      guifg=#E469FE
