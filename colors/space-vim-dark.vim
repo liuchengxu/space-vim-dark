@@ -136,7 +136,7 @@ call s:hi('DiffText'   , ''  , 102 , 'None' , 'None')
 call s:hi('Directory'  , 67  , ''  , 'bold' , 'bold')
 call s:hi('Exception'  , 137 , ''  , 'bold' , 'bold')
 call s:hi('FoldColumn' , 67  , 16  , 'None' , 'None')
-call s:hi('Folded'     , 67  , 16  , 'Bold' , 'Bold')
+call s:hi('Folded'     , 133  , 236 , 'None' , 'None')
 call s:hi('Function'   , 132 , ''  , 'bold' , 'bold')
 call s:hi('Identifier' , 168 , ''  , 'None' , 'None')
 call s:hi('Ignore'     , 244 , 233 , 'None' , 'None')
@@ -210,7 +210,7 @@ call s:hi('ErrorMsg' , 196 , s:n_bg , 'bold' , 'bold')
 hi Error        guifg=#e0211d guibg=NONE
 hi ErrorMsg     guifg=#e0211d guibg=NONE
 
-call s:hi('Special'        , 81  , '' , 'None' , 'None')
+call s:hi('Special'        , 75  , '' , 'None' , 'None')
 call s:hi('SpecialKey'     , 59  , '' , 'None' , 'None')
 call s:hi('SpecialChar'    , 171 , '' , 'bold' , 'bold')
 call s:hi('SpecialComment' , 245 , '' , 'bold' , 'bold')
