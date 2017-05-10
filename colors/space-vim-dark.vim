@@ -242,6 +242,8 @@ hi Comment guifg=#2aa1ae
 call s:hi('NonText' , 241 , '' , 'None' , 'None')
 hi NonText guifg=#534B5D
 
+hi link qfLineNr Type
+
 hi SVDNormal  guifg=#b2b2b2 ctermfg=249
 hi SVDDark1   guifg=#3c3836 ctermfg=237
 hi SVDDark2   guifg=#504945 ctermfg=239
