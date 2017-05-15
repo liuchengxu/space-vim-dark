@@ -75,7 +75,7 @@ endfunction
 
 " call s:hi(item, fg, bg, cterm_style, gui_style)
 
-let s:bg = get(g:, 'space_vim_background', 235)
+let s:bg = get(g:, 'space_vim_dark_background', 235)
 
 let s:bias = s:bg - 235
 
