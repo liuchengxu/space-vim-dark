@@ -120,7 +120,7 @@ call s:hi('Character'   , 75  , '' , 'None' , 'None')
 call s:hi('Number'      , 111 , '' , 'None' , 'None')
 call s:hi('Float'       , 135 , '' , 'None' , 'None')
 call s:hi('String'      , 36  , '' , 'None' , 'None')
-call s:hi('Conditional' , 134 , '' , 'None' , 'None')
+call s:hi('Conditional' , 134 , '' , 'bold' , 'bold')
 call s:hi('Constant'    , 135 , '' , 'None' , 'None')
 call s:hi('Debug'       , 225 , '' , 'None' , 'None')
 call s:hi('Define'      , 177 , '' , 'None' , 'None')
@@ -130,7 +130,7 @@ hi Character       guifg=#FF62B0
 hi Number          guifg=#E697E6
 hi Float           guifg=#B7B7FF
 hi String          guifg=#20af81
-hi Conditional     guifg=#9191FF
+hi Conditional     guifg=#a45bad
 hi Constant        guifg=#7BA7E1
 hi Debug           guifg=#FFC8C8
 hi Define          guifg=#D881ED
@@ -148,19 +148,17 @@ call s:hi('Identifier' , 168 , ''  , 'None' , 'None')
 call s:hi('Ignore'     , 244 , ''  , 'None' , 'None')
 call s:hi('Operator'   , 67  , ''  , 'None' , 'None')
 call s:hi('FoldColumn' , 67  , s:bg1 , 'None' , 'None')
-call s:hi('Folded'     , 133 , s:bg1 , 'None' , 'None')
-hi Folded       guifg=#59955C guibg=#273746
+call s:hi('Folded'     , 133 , s:bg1 , 'bold' , 'bold')
 hi Ignore       guifg=#B4D1B6
 hi Operator     guifg=#25A0C5
 
 call s:hi('PreCondit' , 139 , '' , 'None' , 'None')
 call s:hi('PreProc'   , 176 , '' , 'None' , 'None')
 call s:hi('Question'  , 81  , '' , 'None' , 'None')
-call s:hi('Repeat'    , 31  , '' , 'bold' , 'bold')
+call s:hi('Repeat'    , 68  , '' , 'bold' , 'bold')
 hi PreCondit    guifg=#D698FE
 hi PreProc      guifg=#DD75DD
 hi Question     guifg=#F9BB00
-hi Repeat       guifg=#8282FF
 
 call s:hi('Keyword' , 68  , '' , 'bold' , 'bold')
 call s:hi('Label'   , 104 , '' , 'None' , 'None')
@@ -197,7 +195,7 @@ hi PmenuSbar    guifg=#C269FE guibg=#303030
 
 " SignColumn may relate to ale sign
 call s:hi('SignColumn' , 118 , s:bg , 'None' , 'None')
-call s:hi('Todo'       , 172 , '' , 'bold' , 'bold')
+call s:hi('Todo'       , 172 , s:bg , 'bold' , 'bold')
 hi Todo         guibg=NONE
 hi SignColumn   guibg=NONE
 
@@ -287,6 +285,31 @@ hi link markdownH6 SVDGreen
 hi cppExceptions       ctermfg=207 guifg=#CC3366 cterm=bold gui=bold
 hi link cppSTLexception cppExceptions
 
+" python-mode
+hi pythonLambdaExpr      ctermfg=105 guifg=#8787ff
+hi pythonInclude         ctermfg=68  guifg=#5f87d7 cterm=bold gui=bold
+hi pythonClass           ctermfg=167 guifg=#FF62B0 cterm=bold gui=bold
+hi pythonParameters      ctermfg=147 guifg=#AAAAFF
+hi pythonParam           ctermfg=175 guifg=#67b11d
+hi pythonBrackets        ctermfg=183 guifg=#d7afff
+hi pythonClassParameters ctermfg=111 guifg=#FF5353
+hi pythonSelf            ctermfg=68  guifg=#5f87d7 cterm=bold gui=bold
+
+call s:hi('pythonOperator' , 68 , '' , 'bold' , 'bold')
+hi pythonOperator guifg=#4f97d7
+
+hi pythonDottedName      ctermfg=74  guifg=#5fafd7
+
+hi pythonError           ctermfg=196 guifg=#ff0000
+hi pythonIndentError     ctermfg=197 guifg=#ff005f
+hi pythonSpaceError      ctermfg=198 guifg=#ff0087
+
+hi pythonBuiltinType     ctermfg=74  guifg=#9191FF
+hi pythonBuiltinObj      ctermfg=71  guifg=#5faf5f
+hi pythonBuiltinFunc     ctermfg=169 guifg=#d75faf cterm=bold gui=bold
+
+hi pythonException       ctermfg=207 guifg=#CC3366 cterm=bold gui=bold
+
 """""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""
@@ -338,6 +361,10 @@ hi link LeaderGuideBrackets SVDGreen
 " NERDTree {
 hi link NERDTreeDirSlash  Statement
 hi link NERDTreeCWD Function
+" }
+
+" Tagbar {
+call s:hi('TagbarHighlight'    , 16 , 36 , 'bold' , 'bold')
 " }
 
 delf s:hi
