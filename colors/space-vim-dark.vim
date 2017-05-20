@@ -151,6 +151,7 @@ call s:hi('FoldColumn' , 67  , s:bg1 , 'None' , 'None')
 call s:hi('Folded'     , 133 , s:bg1 , 'bold' , 'bold')
 hi Ignore       guifg=#B4D1B6
 hi Operator     guifg=#25A0C5
+hi Function     guifg=#bc6ec5
 
 call s:hi('PreCondit' , 139 , '' , 'None' , 'None')
 call s:hi('PreProc'   , 176 , '' , 'None' , 'None')
@@ -230,12 +231,12 @@ call s:hi('SpellRare'  , 218 , '' , 'underline'    , 'undercurl')
 
 call s:hi('Tag'          , 161 , ''  , 'None' , 'None')
 call s:hi('Title'        , 176 , ''  , 'None' , 'None')
-call s:hi('Structure'    , 32  , ''  , 'None' , 'None')
-call s:hi('StorageClass' , 208 , ''  , 'None' , 'None')
+call s:hi('Structure'    , 68  , ''  , 'bold' , 'bold')
+call s:hi('StorageClass' , 170 , ''  , 'None' , 'None')
 hi Tag          guifg=#E469FE
 hi Title        guifg=#DD75DD
-hi Structure    guifg=#E37795
-hi StorageClass guifg=#D881ED
+hi Structure    guifg=#4f97d7
+hi StorageClass guifg=#a45bad
 
 call s:hi('Visual'    , '' , s:bg3 , 'None' , 'None')
 call s:hi('VisualNOS' , '' , 238      , 'None' , 'None')
@@ -285,6 +286,17 @@ hi link markdownH6 SVDGreen
 hi cppExceptions       ctermfg=207 guifg=#CC3366 cterm=bold gui=bold
 hi link cppSTLexception cppExceptions
 
+" dot
+hi link dotKeyChar Number
+
+" sh
+call s:hi('shFunctionKey' , 68 , '' , 'bold' , 'bold')
+
+" vimL
+call s:hi('vimLet' , 68 , '' , 'bold' , 'bold')
+hi vimLet guifg=#4f97d7
+
+
 " python-mode
 hi pythonLambdaExpr      ctermfg=105 guifg=#8787ff
 hi pythonInclude         ctermfg=68  guifg=#5f87d7 cterm=bold gui=bold
@@ -304,8 +316,8 @@ hi pythonError           ctermfg=196 guifg=#ff0000
 hi pythonIndentError     ctermfg=197 guifg=#ff005f
 hi pythonSpaceError      ctermfg=198 guifg=#ff0087
 
-hi pythonBuiltinType     ctermfg=74  guifg=#9191FF
-hi pythonBuiltinObj      ctermfg=71  guifg=#5faf5f
+hi pythonBuiltinType     ctermfg=74  guifg=#9191FF cterm=bold gui=bold
+hi pythonBuiltinObj      ctermfg=71  guifg=#5faf5f cterm=bold gui=bold
 hi pythonBuiltinFunc     ctermfg=169 guifg=#d75faf cterm=bold gui=bold
 
 hi pythonException       ctermfg=207 guifg=#CC3366 cterm=bold gui=bold
