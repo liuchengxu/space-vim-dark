@@ -204,12 +204,12 @@ hi SignColumn   guibg=NONE
 call s:hi('VertSplit' , s:bg0 , '' , 'None' , 'None')
 hi VertSplit    guibg=NONE
 
-call s:hi('Warning'    , 222 , '' , 'bold' , 'bold')
-call s:hi('WarningMsg' , 222 , '' , 'bold' , 'bold')
+call s:hi('Warning'    , 136 , '' , 'bold' , 'bold')
+call s:hi('WarningMsg' , 136 , '' , 'bold' , 'bold')
 hi Warning      guifg=#dc752f guibg=NONE
 hi WarningMsg   guifg=#dc752f guibg=NONE
 
-call s:hi('Error'    , 160 , '' , 'bold' , 'bold')
+call s:hi('Error'    , 160 , s:bg , 'bold' , 'bold')
 call s:hi('ErrorMsg' , 196 , '' , 'bold' , 'bold')
 hi Error        guifg=#e0211d guibg=NONE
 hi ErrorMsg     guifg=#e0211d guibg=NONE
@@ -328,6 +328,10 @@ hi pythonException       ctermfg=207 guifg=#CC3366 cterm=bold gui=bold
 """""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""
+"ALE {
+hi link ALEWarningSign  Warning
+hi link ALEErrorSign    Error
+"}
 " vim-indent-guides {
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  guibg=#708090 ctermbg=237
