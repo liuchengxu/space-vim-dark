@@ -201,7 +201,7 @@ hi Todo         guibg=NONE
 hi SignColumn   guibg=NONE
 
 " VertSplit consistent with normal background to hide it
-call s:hi('VertSplit' , s:bg , '' , 'None' , 'None')
+call s:hi('VertSplit' , s:bg0 , '' , 'None' , 'None')
 hi VertSplit    guibg=NONE
 
 call s:hi('Warning'    , 222 , '' , 'bold' , 'bold')
