@@ -117,7 +117,7 @@ hi WildMenu guifg=#FF4848
 
 call s:hi('Boolean'     , 135 , '' , 'None' , 'None')
 call s:hi('Character'   , 75  , '' , 'None' , 'None')
-call s:hi('Number'      , 111 , '' , 'None' , 'None')
+call s:hi('Number'      , 176 , '' , 'None' , 'None')
 call s:hi('Float'       , 135 , '' , 'None' , 'None')
 call s:hi('String'      , 36  , '' , 'None' , 'None')
 call s:hi('Conditional' , 134 , '' , 'bold' , 'bold')
@@ -168,7 +168,7 @@ hi keyword      guifg=#E469FE
 hi Label        guifg=#DFB0FF
 hi Macro        guifg=#8C8CFF
 
-call s:hi('Type'       , 169 , '' , 'None'      , 'None')
+call s:hi('Type'       , 168 , '' , 'None'      , 'None')
 call s:hi('Typedef'    , 204 , '' , 'None'      , 'None')
 call s:hi('Underlined' , '' , '' , 'underline' , 'underline')
 hi Type         guifg=#ce537a
@@ -295,7 +295,10 @@ call s:hi('shFunctionKey' , 68 , '' , 'bold' , 'bold')
 " vimL
 call s:hi('vimLet' , 68 , '' , 'bold' , 'bold')
 hi vimLet guifg=#4f97d7
-
+hi link vimFuncKey vimLet
+hi link vimCommand vimLet
+hi link vimGroup Directory
+hi link vimHiGroup Directory
 
 " python-mode
 hi pythonLambdaExpr      ctermfg=105 guifg=#8787ff
