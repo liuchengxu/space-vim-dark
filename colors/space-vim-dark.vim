@@ -214,7 +214,7 @@ call s:hi('ErrorMsg' , 196 , '' , 'bold' , 'bold')
 hi Error        guifg=#e0211d guibg=NONE
 hi ErrorMsg     guifg=#e0211d guibg=NONE
 
-call s:hi('Special'        , 75  , '' , 'None' , 'None')
+call s:hi('Special'        , 175 , '' , 'None' , 'None')
 call s:hi('SpecialKey'     , 59  , '' , 'None' , 'None')
 call s:hi('SpecialChar'    , 171 , '' , 'bold' , 'bold')
 call s:hi('SpecialComment' , 245 , '' , 'bold' , 'bold')
@@ -300,6 +300,9 @@ hi link vimCommand vimLet
 hi link vimGroup Directory
 hi link vimHiGroup Directory
 
+" json
+hi link jsonStringSQError SVDRed
+
 " python-mode
 hi pythonLambdaExpr      ctermfg=105 guifg=#8787ff
 hi pythonInclude         ctermfg=68  guifg=#5f87d7 cterm=bold gui=bold
@@ -319,7 +322,7 @@ hi pythonError           ctermfg=196 guifg=#ff0000
 hi pythonIndentError     ctermfg=197 guifg=#ff005f
 hi pythonSpaceError      ctermfg=198 guifg=#ff0087
 
-hi pythonBuiltinType     ctermfg=74  guifg=#9191FF cterm=bold gui=bold
+hi pythonBuiltinType     ctermfg=170  guifg=#D54FD5 cterm=bold gui=bold
 hi pythonBuiltinObj      ctermfg=71  guifg=#5faf5f cterm=bold gui=bold
 hi pythonBuiltinFunc     ctermfg=169 guifg=#d75faf cterm=bold gui=bold
 
