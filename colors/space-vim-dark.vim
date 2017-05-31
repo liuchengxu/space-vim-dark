@@ -120,7 +120,7 @@ call s:hi('Character'   , 75  , '' , 'None' , 'None')
 call s:hi('Number'      , 176 , '' , 'None' , 'None')
 call s:hi('Float'       , 135 , '' , 'None' , 'None')
 call s:hi('String'      , 36  , '' , 'None' , 'None')
-call s:hi('Conditional' , 134 , '' , 'bold' , 'bold')
+call s:hi('Conditional' , 68 , '' , 'bold' , 'bold')
 call s:hi('Constant'    , 135 , '' , 'None' , 'None')
 call s:hi('Debug'       , 225 , '' , 'None' , 'None')
 call s:hi('Define'      , 177 , '' , 'None' , 'None')
@@ -130,7 +130,7 @@ hi Character       guifg=#FF62B0
 hi Number          guifg=#E697E6
 hi Float           guifg=#B7B7FF
 hi String          guifg=#20af81
-hi Conditional     guifg=#a45bad
+hi Conditional     guifg=#4f97d7
 hi Constant        guifg=#7BA7E1
 hi Debug           guifg=#FFC8C8
 hi Define          guifg=#D881ED
@@ -160,6 +160,7 @@ call s:hi('Repeat'    , 68  , '' , 'bold' , 'bold')
 hi PreCondit    guifg=#D698FE
 hi PreProc      guifg=#DD75DD
 hi Question     guifg=#F9BB00
+hi Repeat       guifg=#4f97d7
 
 call s:hi('Keyword' , 68  , '' , 'bold' , 'bold')
 call s:hi('Label'   , 104 , '' , 'None' , 'None')
