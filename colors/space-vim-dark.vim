@@ -142,7 +142,7 @@ call s:hi('DiffDelete' , 162 , 53  , 'None' , 'None')
 call s:hi('DiffText'   , ''  , 102 , 'None' , 'None')
 
 call s:hi('Directory'  , 67  , ''  , 'bold' , 'bold')
-call s:hi('Exception'  , 137 , ''  , 'bold' , 'bold')
+call s:hi('Exception'  , 203 , ''  , 'bold' , 'bold')
 call s:hi('Function'   , 132 , ''  , 'bold' , 'bold')
 call s:hi('Identifier' , 168 , ''  , 'None' , 'None')
 call s:hi('Ignore'     , 244 , ''  , 'None' , 'None')
@@ -304,6 +304,9 @@ hi link vimHiGroup Directory
 " json
 hi link jsonStringSQError SVDRed
 
+" html
+hi link htmlSpecialTagName Tag
+
 " python-mode
 hi pythonLambdaExpr      ctermfg=105 guifg=#8787ff
 hi pythonInclude         ctermfg=68  guifg=#5f87d7 cterm=bold gui=bold
@@ -316,6 +319,8 @@ hi pythonSelf            ctermfg=68  guifg=#5f87d7 cterm=bold gui=bold
 
 call s:hi('pythonOperator' , 68 , '' , 'bold' , 'bold')
 hi pythonOperator guifg=#4f97d7
+
+hi link pythonStatement pythonOperator
 
 hi pythonDottedName      ctermfg=74  guifg=#5fafd7
 
