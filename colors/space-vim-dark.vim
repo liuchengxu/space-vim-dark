@@ -305,6 +305,11 @@ hi link vimHiGroup Directory
 " json
 hi link jsonStringSQError SVDRed
 
+" xml
+hi link xmlTag     Identifier
+hi link xmlEndTag  Identifier
+hi link xmlTagName Identifier
+
 " html
 hi link htmlSpecialTagName Tag
 
