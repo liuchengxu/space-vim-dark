@@ -211,7 +211,7 @@ hi Warning      guifg=#dc752f guibg=NONE
 hi WarningMsg   guifg=#dc752f guibg=NONE
 
 call s:hi('Error'    , 160 , s:bg , 'bold' , 'bold')
-call s:hi('ErrorMsg' , 196 , '' , 'bold' , 'bold')
+call s:hi('ErrorMsg' , 196 , s:bg , 'bold' , 'bold')
 hi Error        guifg=#e0211d guibg=NONE
 hi ErrorMsg     guifg=#e0211d guibg=NONE
 
