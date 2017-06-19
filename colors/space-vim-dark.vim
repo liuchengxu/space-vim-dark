@@ -393,7 +393,8 @@ hi link LeaderGuideBrackets SVDGreen
 
 " NERDTree {
 hi link NERDTreeCWD       Function
-hi link NERDTreeDirSlash  Statement
+hi link NERDTreeDir       SVDBlueBold
+hi link NERDTreeDirSlash  SVDBlueBold
 " }
 
 " Tagbar {
