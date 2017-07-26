@@ -167,7 +167,6 @@ hi Repeat       guifg=#4f97d7
 call s:hi('Keyword' , 68  , '' , 'bold' , 'bold')
 call s:hi('Label'   , 104 , '' , 'None' , 'None')
 call s:hi('Macro'   , 110 , '' , 'None' , 'None')
-hi keyword      guifg=#E469FE
 hi Label        guifg=#DFB0FF
 hi Macro        guifg=#8C8CFF
 
@@ -287,12 +286,16 @@ hi link markdownH6 SVDGreen
 hi link mkdCode    SVDYellow
 hi link mkdItalic  String
 
+" c
+hi link cConstant  SVDOrange
+
 " cpp
 hi cppExceptions       ctermfg=207 guifg=#CC3366 cterm=bold gui=bold
 hi link cppSTLexception cppExceptions
 
 " dot
 hi link dotKeyChar Number
+hi link dotType StorageClass
 
 " sh
 hi link shSet         SVDBlueBold
@@ -318,6 +321,19 @@ hi link jsonStringSQError SVDRed
 hi link xmlTag     Identifier
 hi link xmlEndTag  Identifier
 hi link xmlTagName Identifier
+
+" java
+hi link javaScopeDecl keyword
+hi link javaClassDecl Function
+
+" scala
+hi link scalaKeyword SVDBlueBold
+hi link scalaNameDefinition SVDBlueBold
+
+" ruby
+hi link rubyClass SVDBlueBold
+hi link rubyDefine SVDBlueBold
+hi link rubyInterpolationDelimiter Number
 
 " html
 hi link htmlSpecialTagName Tag
