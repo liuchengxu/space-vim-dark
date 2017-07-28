@@ -293,6 +293,10 @@ hi link cConstant  SVDOrange
 hi cppExceptions       ctermfg=207 guifg=#CC3366 cterm=bold gui=bold
 hi link cppSTLexception cppExceptions
 
+" css
+hi link cssTagName SVDBlueBold
+hi link cssProp    Function
+
 " dot
 hi link dotKeyChar Number
 hi link dotType StorageClass
