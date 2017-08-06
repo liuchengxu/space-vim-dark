@@ -126,7 +126,7 @@ call s:hi('Conditional' , 68 , '' , 'bold' , 'bold')
 call s:hi('Constant'    , 135 , '' , 'None' , 'None')
 call s:hi('Debug'       , 225 , '' , 'None' , 'None')
 call s:hi('Define'      , 177 , '' , 'None' , 'None')
-call s:hi('Delimiter'   , 241 , '' , 'None' , 'None')
+call s:hi('Delimiter'   , 151 , '' , 'None' , 'None')
 hi Boolean         guifg=#FF68DD
 hi Character       guifg=#FF62B0
 hi Number          guifg=#E697E6
