@@ -234,11 +234,11 @@ call s:hi('SpellRare'  , 218 , '' , 'underline'    , 'undercurl')
 call s:hi('Tag'          , 161 , ''  , 'None' , 'None')
 call s:hi('Title'        , 176 , ''  , 'None' , 'None')
 call s:hi('Structure'    , 68  , ''  , 'bold' , 'bold')
-call s:hi('StorageClass' , 170 , ''  , 'None' , 'None')
+call s:hi('StorageClass' , 178 , ''  , 'bold' , 'bold')
 hi Tag          guifg=#E469FE
 hi Title        guifg=#DD75DD
 hi Structure    guifg=#4f97d7
-hi StorageClass guifg=#a45bad
+hi StorageClass guifg=#d1951d
 
 call s:hi('Visual'    , '' , s:bg3 , 'None' , 'None')
 call s:hi('VisualNOS' , '' , 238      , 'None' , 'None')
