@@ -166,9 +166,8 @@ hi Repeat       guifg=#4f97d7
 
 call s:hi('Keyword' , 68  , '' , 'bold' , 'bold')
 call s:hi('Label'   , 104 , '' , 'None' , 'None')
-call s:hi('Macro'   , 110 , '' , 'None' , 'None')
+call s:hi('Macro'   , 141 , '' , 'None' , 'None')
 hi Label        guifg=#DFB0FF
-hi Macro        guifg=#8C8CFF
 
 call s:hi('Type'       , 168 , '' , 'None'      , 'None')
 call s:hi('Typedef'    , 204 , '' , 'None'      , 'None')
@@ -264,7 +263,7 @@ hi SVDRed     guifg=#f2241f ctermfg=160
 hi SVDBlue    guifg=#4f97d7 ctermfg=68
 hi SVDGreen   guifg=#20af81 ctermfg=36
 hi SVDYellow  guifg=#67b11d ctermfg=114
-hi SVDOrange  guifg=#b1951d ctermfg=137
+hi SVDOrange  guifg=#d1951d ctermfg=178
 hi SVDMagenta guifg=#a31db1 ctermfg=128
 
 hi SVDAquaBold   guifg=#2d9574 ctermfg=72  gui=bold cterm=bold
@@ -305,6 +304,7 @@ hi link dotType StorageClass
 hi link shSet         SVDBlueBold
 hi link shLoop        SVDBlueBold
 hi link shFunctionKey SVDBlueBold
+hi link shTestOpr     SVDOrange
 
 " vimL
 hi link vimLet     SVDBlueBold
@@ -325,6 +325,14 @@ hi link jsonStringSQError SVDRed
 hi link xmlTag     Identifier
 hi link xmlEndTag  Identifier
 hi link xmlTagName Identifier
+
+" go
+hi link goFunctionCall    Function
+hi link goMethodCall      Function
+hi link goTypeName        Function
+hi link goReceiverType    SVDYellow
+hi link goTypeConstructor SVDOrange
+hi link goType            PreProc
 
 " java
 hi link javaScopeDecl keyword
