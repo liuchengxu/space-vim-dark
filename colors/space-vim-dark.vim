@@ -117,7 +117,7 @@ call s:hi('TabLineFill' , 145 , s:bg2 , 'None' , 'None')
 call s:hi('WildMenu' , 214 , s:bg3 , 'None' , 'None')
 hi WildMenu guifg=#FF4848
 
-call s:hi('Boolean'     , 135 , '' , 'None' , 'None')
+call s:hi('Boolean'     , 207 , '' , 'None' , 'None')
 call s:hi('Character'   , 75  , '' , 'None' , 'None')
 call s:hi('Number'      , 176 , '' , 'None' , 'None')
 call s:hi('Float'       , 135 , '' , 'None' , 'None')
@@ -148,11 +148,10 @@ call s:hi('Exception'  , 203 , ''  , 'bold' , 'bold')
 call s:hi('Function'   , 169 , ''  , 'bold' , 'bold')
 call s:hi('Identifier' , 168 , ''  , 'None' , 'None')
 call s:hi('Ignore'     , 244 , ''  , 'None' , 'None')
-call s:hi('Operator'   , 67  , ''  , 'None' , 'None')
+call s:hi('Operator'   , 213  , ''  , 'None' , 'None')
 call s:hi('FoldColumn' , 67  , s:bg1 , 'None' , 'None')
 call s:hi('Folded'     , 133 , s:bg1 , 'bold' , 'bold')
 hi Ignore       guifg=#B4D1B6
-hi Operator     guifg=#25A0C5
 hi Function     guifg=#bc6ec5
 
 call s:hi('PreCondit' , 139 , '' , 'None' , 'None')
@@ -306,6 +305,9 @@ hi link shLoop        SVDBlueBold
 hi link shFunctionKey SVDBlueBold
 hi link shTestOpr     SVDOrange
 
+" solidity
+hi link solContract  SVDOrangeBold
+
 " vimL
 hi link vimLet     SVDBlueBold
 hi link vimFuncKey SVDBlueBold
@@ -333,6 +335,7 @@ hi link goTypeName        Function
 hi link goReceiverType    SVDYellow
 hi link goTypeConstructor SVDOrange
 hi link goType            PreProc
+hi link goFloats          Float
 
 " java
 hi link javaScopeDecl keyword
