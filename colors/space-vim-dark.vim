@@ -317,6 +317,7 @@ hi link vimHiGroup Directory
 
 " rust
 hi link rustKeyword SVDBlueBold
+hi link rustModPath SVDBlue
 call s:hi('rustTrait'       , 168 , '' , 'bold'      , 'bold')
 hi Type         guifg=#ce537a
 
@@ -336,6 +337,10 @@ hi link goReceiverType    SVDYellow
 hi link goTypeConstructor SVDOrange
 hi link goType            PreProc
 hi link goFloats          Float
+
+" make
+hi link makeCommands      SVDBlue
+hi link makeSpecTarget    SVDBlueBold
 
 " java
 hi link javaScopeDecl keyword
