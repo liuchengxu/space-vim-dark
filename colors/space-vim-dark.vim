@@ -166,6 +166,7 @@ hi Repeat       guifg=#4f97d7
 call s:hi('Keyword' , 68  , '' , 'bold' , 'bold')
 call s:hi('Label'   , 104 , '' , 'None' , 'None')
 call s:hi('Macro'   , 141 , '' , 'None' , 'None')
+hi Keyword      guifg=#4f97d7
 hi Label        guifg=#DFB0FF
 
 call s:hi('Type'       , 168 , '' , 'None'      , 'None')
@@ -217,11 +218,11 @@ hi ErrorMsg     guifg=#e0211d guibg=NONE
 call s:hi('Special'        , 169 , '' , 'None' , 'None')
 call s:hi('SpecialKey'     , 59  , '' , 'None' , 'None')
 call s:hi('SpecialChar'    , 171 , '' , 'bold' , 'bold')
-call s:hi('SpecialComment' , 245 , '' , 'bold' , 'bold')
+call s:hi('SpecialComment' , 24  , '' , 'None' , 'None')
 hi Special        guifg=#DD75DD
 hi SpecialKey     guifg=#FF73B9
 hi SpecialChar    guifg=#6094DB
-hi SpecialComment guifg=#ED9EFE
+hi SpecialComment guifg=#3C8380
 
 " marks column
 call s:hi('SpellBad'   , 168 , '' , 'underline'    , 'undercurl')
@@ -262,14 +263,14 @@ hi SVDRed     guifg=#f2241f ctermfg=160
 hi SVDBlue    guifg=#4f97d7 ctermfg=68
 hi SVDGreen   guifg=#20af81 ctermfg=36
 hi SVDYellow  guifg=#67b11d ctermfg=114
-hi SVDOrange  guifg=#d1951d ctermfg=178
+hi SVDOrange  guifg=#e1951d ctermfg=178
 hi SVDMagenta guifg=#a31db1 ctermfg=128
 
 hi SVDAquaBold   guifg=#2d9574 ctermfg=72  gui=bold cterm=bold
 hi SVDBlueBold   guifg=#4f97d7 ctermfg=68  gui=bold cterm=bold
 hi SVDGreenBold  guifg=#20af81 ctermfg=36  gui=bold cterm=bold
 hi SVDYellowBold guifg=#67b11d ctermfg=114 gui=bold cterm=bold
-hi SVDOrangeBold guifg=#b1951d ctermfg=137 gui=bold cterm=bold
+hi SVDOrangeBold guifg=#e1951d ctermfg=137 gui=bold cterm=bold
 
 """""""""""""""""""""""""""""""""""""""""""
 " Language
@@ -337,6 +338,7 @@ hi link goReceiverType    SVDYellow
 hi link goTypeConstructor SVDOrange
 hi link goType            PreProc
 hi link goFloats          Float
+hi link goPredefinedIdentifiers SVDOrangeBold
 
 " make
 hi link makeCommands      SVDBlue
@@ -372,13 +374,14 @@ hi pythonSelf            ctermfg=68  guifg=#5f87d7 cterm=bold gui=bold
 hi link pythonOperator  SVDBlueBold
 hi link pythonStatement SVDBlueBold
 
-hi pythonDottedName      ctermfg=74  guifg=#5fafd7
+call s:hi('pythonDottedName'   , 169 , ''  , 'bold' , 'bold')
+call s:hi('pythonDecorator'    , 169 , ''  , 'bold' , 'bold')
 
 hi pythonError           ctermfg=196 guifg=#ff0000
 hi pythonIndentError     ctermfg=197 guifg=#ff005f
 hi pythonSpaceError      ctermfg=198 guifg=#ff0087
 
-hi pythonBuiltinType     ctermfg=170  guifg=#D54FD5 cterm=bold gui=bold
+hi link pythonBuiltinType SVDBlue
 hi pythonBuiltinObj      ctermfg=71  guifg=#5faf5f cterm=bold gui=bold
 hi pythonBuiltinFunc     ctermfg=169 guifg=#d75faf cterm=bold gui=bold
 
