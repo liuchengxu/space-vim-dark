@@ -122,8 +122,8 @@ call s:hi('Character'   , 75  , '' , 'None' , 'None')
 call s:hi('Number'      , 176 , '' , 'None' , 'None')
 call s:hi('Float'       , 135 , '' , 'None' , 'None')
 call s:hi('String'      , 36  , '' , 'None' , 'None')
-call s:hi('Conditional' , 68 , '' , 'bold' , 'bold')
-call s:hi('Constant'    , 135 , '' , 'None' , 'None')
+call s:hi('Conditional' , 68  , '' , 'bold' , 'bold')
+call s:hi('Constant'    , 218 , '' , 'None' , 'None')
 call s:hi('Debug'       , 225 , '' , 'None' , 'None')
 call s:hi('Define'      , 177 , '' , 'None' , 'None')
 call s:hi('Delimiter'   , 151 , '' , 'None' , 'None')
@@ -133,7 +133,7 @@ hi Number          guifg=#E697E6
 hi Float           guifg=#B7B7FF
 hi String          guifg=#20af81
 hi Conditional     guifg=#4f97d7
-hi Constant        guifg=#7BA7E1
+hi Constant        guifg=#d19a66
 hi Debug           guifg=#FFC8C8
 hi Define          guifg=#D881ED
 hi Delimiter       guifg=#74BAAC
@@ -148,7 +148,7 @@ call s:hi('Exception'  , 203 , ''  , 'bold' , 'bold')
 call s:hi('Function'   , 169 , ''  , 'bold' , 'bold')
 call s:hi('Identifier' , 168 , ''  , 'None' , 'None')
 call s:hi('Ignore'     , 244 , ''  , 'None' , 'None')
-call s:hi('Operator'   , 213  , ''  , 'None' , 'None')
+call s:hi('Operator'   , 111 , ''  , 'None' , 'None')
 call s:hi('FoldColumn' , 67  , s:bg1 , 'None' , 'None')
 call s:hi('Folded'     , 133 , s:bg1 , 'bold' , 'bold')
 hi Ignore       guifg=#B4D1B6
@@ -264,7 +264,7 @@ hi SVDBlue    guifg=#4f97d7 ctermfg=68
 hi SVDGreen   guifg=#20af81 ctermfg=36
 hi SVDYellow  guifg=#67b11d ctermfg=114
 hi SVDOrange  guifg=#e1951d ctermfg=178
-hi SVDMagenta guifg=#a31db1 ctermfg=128
+hi SVDMagenta guifg=#e76a49 ctermfg=128
 
 hi SVDAquaBold   guifg=#2d9574 ctermfg=72  gui=bold cterm=bold
 hi SVDBlueBold   guifg=#4f97d7 ctermfg=68  gui=bold cterm=bold
@@ -333,12 +333,13 @@ hi link xmlTagName Identifier
 " go
 hi link goFunctionCall    Function
 hi link goMethodCall      Function
-hi link goTypeName        Function
 hi link goReceiverType    SVDYellow
 hi link goTypeConstructor SVDOrange
 hi link goType            PreProc
 hi link goFloats          Float
-hi link goPredefinedIdentifiers SVDOrangeBold
+hi link goFormatSpecifier SVDBlue
+hi link goPredefinedIdentifiers SVDMagenta
+call s:hi('goTypeName', 169, '', 'bold', 'bold')
 
 " make
 hi link makeCommands      SVDBlue
