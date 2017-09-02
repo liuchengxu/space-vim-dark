@@ -331,7 +331,6 @@ hi link xmlEndTag  Identifier
 hi link xmlTagName Identifier
 
 " go
-hi link goFunctionCall    Function
 hi link goMethodCall      Function
 hi link goReceiverType    SVDYellow
 hi link goTypeConstructor SVDOrange
@@ -340,6 +339,7 @@ hi link goFloats          Float
 hi link goFormatSpecifier SVDBlue
 hi link goPredefinedIdentifiers SVDMagenta
 call s:hi('goTypeName', 169, '', 'bold', 'bold')
+call s:hi('goFunction', 168, '', 'bold', 'bold')
 
 " make
 hi link makeCommands      SVDBlue
@@ -451,7 +451,11 @@ hi link NERDTreeClosable  SVDBlueBold
 " }
 
 " Tagbar {
-call s:hi('TagbarHighlight'    , 16 , 36 , 'bold' , 'bold')
+call s:hi('TagbarHighlight'        , 16  , 36 , 'bold' , 'bold')
+call s:hi('TagbarVisibilityPublic' , 34  , '' , 'none' , 'none')
+call s:hi('TagbarScope'            , 169 , '' , 'bold' , 'bold')
+hi link TagbarKind       Function
+hi link TagbarNestedKind SVDBlueBold
 " }
 
 delf s:hi
