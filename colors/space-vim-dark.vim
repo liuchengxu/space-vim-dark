@@ -146,7 +146,7 @@ call s:hi('DiffText'   , ''  , 102 , 'None' , 'None')
 call s:hi('Directory'  , 67  , ''  , 'bold' , 'bold')
 call s:hi('Exception'  , 203 , ''  , 'bold' , 'bold')
 call s:hi('Function'   , 169 , ''  , 'bold' , 'bold')
-call s:hi('Identifier' , 168 , ''  , 'None' , 'None')
+call s:hi('Identifier' , 167 , ''  , 'None' , 'None')
 call s:hi('Ignore'     , 244 , ''  , 'None' , 'None')
 call s:hi('Operator'   , 111 , ''  , 'None' , 'None')
 call s:hi('FoldColumn' , 67  , s:bg1 , 'None' , 'None')
@@ -167,7 +167,7 @@ call s:hi('Keyword' , 68  , '' , 'bold' , 'bold')
 call s:hi('Label'   , 104 , '' , 'None' , 'None')
 call s:hi('Macro'   , 141 , '' , 'None' , 'None')
 hi Keyword      guifg=#4f97d7
-hi Label        guifg=#DFB0FF
+hi Label        guifg=#DF90FF
 
 call s:hi('Type'       , 168 , '' , 'None'      , 'None')
 call s:hi('Typedef'    , 204 , '' , 'None'      , 'None')
