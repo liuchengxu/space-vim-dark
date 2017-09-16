@@ -109,6 +109,8 @@ hi ColorColumn               guibg=#212026
 call s:hi('StatusLine'   , 140 , s:bg2 , 'None' , 'None')
 call s:hi('StatusLineNC' , 244 , s:bg1 , 'None' , 'None')
 hi StatusLineNC guibg=#3a3a3a
+call s:hi('StatusLineTerm'   , 140 , s:bg2 , 'bold' , 'bold')
+call s:hi('StatusLineTermNC' , 244 , s:bg1 , 'bold' , 'bold')
 
 call s:hi('TabLine'     , 66  , s:bg3 , 'None' , 'None')
 call s:hi('TabLineSel'  , 178 , s:bg4 , 'None' , 'None')
