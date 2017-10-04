@@ -342,6 +342,7 @@ hi link goFormatSpecifier SVDBlue
 hi link goPredefinedIdentifiers SVDMagenta
 call s:hi('goTypeName', 169, '', 'bold', 'bold')
 call s:hi('goFunction', 168, '', 'bold', 'bold')
+hi link goFunctionCall    goFunction
 
 " make
 hi link makeCommands      SVDBlue
@@ -459,6 +460,8 @@ call s:hi('TagbarScope'            , 169 , '' , 'bold' , 'bold')
 hi link TagbarKind       Function
 hi link TagbarNestedKind SVDBlueBold
 " }
+
+hi link SignatureMarkText SVDOrange
 
 delf s:hi
 unlet s:color_map s:bg
