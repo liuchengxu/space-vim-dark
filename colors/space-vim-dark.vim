@@ -65,7 +65,7 @@ let s:color256 = {
 
 " ========|===========
 " Red     | 160 168
-" Blue    | 68
+" Blue    | 67  68  111
 " Yellow  | 114 179
 " Orange  | 173 178
 " Purple  | 140
@@ -125,7 +125,7 @@ call s:hi('TabLineFill' , 145 , s:bg2 , 'None' , 'None')
 
 call s:hi('WildMenu'    , 214 , s:bg3 , 'None' , 'None')
 
-call s:hi('Boolean'     , 207 , '' , 'None' , 'None')
+call s:hi('Boolean'     , 178 , '' , 'None' , 'None')
 call s:hi('Character'   , 75  , '' , 'None' , 'None')
 call s:hi('Number'      , 176 , '' , 'None' , 'None')
 call s:hi('Float'       , 135 , '' , 'None' , 'None')
@@ -141,7 +141,7 @@ call s:hi('DiffChange' , 181 , 239 , 'None' , 'None')
 call s:hi('DiffDelete' , 162 , 53  , 'None' , 'None')
 call s:hi('DiffText'   , ''  , 102 , 'None' , 'None')
 
-call s:hi('Exception'  , 203 , ''  , 'bold' , 'bold')
+call s:hi('Exception'  , 204 , ''  , 'bold' , 'bold')
 call s:hi('Function'   , 169 , ''  , 'bold' , 'bold')
 call s:hi('Identifier' , 167 , ''  , 'None' , 'None')
 call s:hi('Ignore'     , 244 , ''  , 'None' , 'None')
@@ -162,8 +162,8 @@ call s:hi('Structure' , 68 , '' , 'bold' , 'bold')
 call s:hi('Label'   , 104 , '' , 'None' , 'None')
 call s:hi('Macro'   , 140 , '' , 'None' , 'None')
 
-call s:hi('Type'       , 168 , '' , 'None'      , 'None')
-call s:hi('Typedef'    , 68  , '' , 'None'      , 'None')
+call s:hi('Type'       , 68 , '' , 'None'      , 'None')
+call s:hi('Typedef'    , 68 , '' , 'None'      , 'None')
 call s:hi('Underlined' , ''  , '' , 'underline' , 'underline')
 
 
@@ -197,7 +197,6 @@ call s:hi('SpecialKey'     , 59  , '' , 'None' , 'None')
 call s:hi('SpecialChar'    , 171 , '' , 'bold' , 'bold')
 call s:hi('SpecialComment' , 24  , '' , 'None' , 'None')
 
-" marks column
 call s:hi('SpellBad'   , 168 , '' , 'underline' , 'undercurl')
 call s:hi('SpellCap'   , 110 , '' , 'underline' , 'undercurl')
 call s:hi('SpellLocal' , 253 , '' , 'underline' , 'undercurl')
@@ -214,7 +213,6 @@ call s:hi('VisualNOS' , '' , s:bg3 , 'None' , 'None')
 " tilde group
 call s:hi('NonText' , 241 , '' , 'None' , 'None')
 
-hi VertSplit    guibg=NONE
 hi MatchParen   guibg=NONE
 hi SignColumn   guibg=NONE
 
@@ -237,7 +235,8 @@ call s:hi('mkdItalic'  , 36  , '' , 'None' , 'italic')
 call s:hi('cConstant', 178, '', 'none', 'none')
 
 " cpp
-call s:hi('cppSTLexception', 207, '', 'bold', 'bold')
+call s:hi('cppSTLexception', 199, '', 'bold', 'bold')
+call s:hi('cppSTLnamespace', 178, '', 'bold', 'bold')
 
 " css
 call s:hi('cssTagName' , 68  , '' , 'bold' , 'bold')
@@ -279,11 +278,12 @@ call s:hi('xmlTagName' , 167 , '' , 'none' , 'none')
 " go
 call s:hi('goType'                  , 176   , '' , 'none' , 'none')
 call s:hi('goFloat'                 , 135   , '' , 'none' , 'none')
+call s:hi('goField'                 , 68    , '' , 'none' , 'none')
 call s:hi('goTypeName'              , 169   , '' , 'bold' , 'bold')
-call s:hi('goFunction'              , 168   , '' , 'bold' , 'bold')
+call s:hi('goFunction'              , 169   , '' , 'bold' , 'bold')
 call s:hi('goMethodCall'            , 168   , '' , 'bold' , 'bold')
 call s:hi('goReceiverType'          , 114   , '' , 'none' , 'none')
-call s:hi('goFunctionCall'          , 168   , '' , 'bold' , 'bold')
+call s:hi('goFunctionCall'          , 169   , '' , 'bold' , 'bold')
 call s:hi('goFormatSpecifier'       , 68    , '' , 'none' , 'none')
 call s:hi('goTypeConstructor'       , 178   , '' , 'none' , 'none')
 call s:hi('goPredefinedIdentifiers' , '140' , '' , 'none' , 'none')
