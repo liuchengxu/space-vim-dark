@@ -19,7 +19,7 @@ endif
 let g:colors_name='space-vim-dark'
 
 " refer to http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
-let s:color_map = {
+let s:color256 = {
             \   16 : '#000000',  17 : '#00005f',  18 : '#000087',  19 : '#0000af',  20 : '#0000d7',  21 : '#0000ff',
             \   22 : '#005f00',  23 : '#005f5f',  24 : '#005f87',  25 : '#005faf',  26 : '#005fd7',  27 : '#005fff',
             \   28 : '#008700',  29 : '#00875f',  30 : '#008787',  31 : '#0087af',  32 : '#0087d7',  33 : '#0087ff',
@@ -63,52 +63,59 @@ let s:color_map = {
             \   250 : '#bcbcbc', 251 : '#c6c6c6', 252 : '#d0d0d0', 253 : '#dadada', 254 : '#e4e4e4', 255 : '#eeeeee',
             \   }
 
-function! s:hi(item, fg, bg, cterm_style, gui_style)
-    if !empty(a:fg)
-        execute printf('hi %s ctermfg=%d guifg=%s', a:item, a:fg, s:color_map[a:fg])
-    endif
-    if !empty(a:bg)
-        execute printf('hi %s ctermbg=%d guibg=%s', a:item, a:bg, s:color_map[a:bg])
-    endif
-    execute printf('hi %s cterm=%s gui=%s', a:item, a:cterm_style, a:gui_style)
+" ========|===========
+" Red     | 160 168
+" Blue    | 67  68  111
+" Yellow  | 114 179
+" Orange  | 173 178
+" Purple  | 140
+" Magenta | 128
+" ========|===========
+
+let s:colors = {
+      \ 16: '#292b2e', 24: '#3C8380', 28: '#c269fe', 30: '#2aa1ae', 36: '#20af81', 40: '#00ff00',
+      \ 59: '#FF73B9', 68: '#4f97d7', 75: '#FF62B0', 76: '#86dc2f', 81: '#f9bb00', 88: '#330033',
+      \ 104: '#df90ff', 114: '#67b11d', 128: '#e76a49', 135: '#B7B7FF', 136: '#dc752f', 139: '#d698fe',
+      \ 140: '#b888e2', 141: '#9a9aba', 151: '#74BAAC', 160: '#e0211d', 161: '#E469FE', 167: '#ce537a',
+      \ 168: '#ce537a', 169: '#bc6ec5', 171: '#6094DB', 173: '#e18254', 176: '#E697E6', 177: '#D881ED',
+      \ 178: '#d1951d', 179: '#d4b261', 196: '#e0211d', 204: '#ce537a', 207: '#FF68DD', 214: '#FF4848',
+      \ 218: '#d19a66', 225: '#FFC8C8', 229: '#fff06a', 233: '#303030', 234: '#212026', 235: '#292b2e',
+      \ 236: '#34323e', 238: '#544a65', 241: '#534b5d', 244: '#b4d1b6',
+      \}
+
+function! s:hi(item, fg, bg, cterm, gui)
+  let l:fg = empty(a:fg) ? '' : printf('ctermfg=%d guifg=%s', a:fg, get(s:colors, a:fg, s:color256[a:fg]))
+  let l:bg = empty(a:bg) ? '' : printf('ctermbg=%d guibg=%s', a:bg, get(s:colors, a:bg, s:color256[a:bg]))
+  let l:style = printf('cterm=%s gui=%s', a:cterm, a:gui)
+  execute 'hi '.a:item.' '.l:fg.' '.l:bg.' '.l:style
 endfunction
 
-" call s:hi(item, fg, bg, cterm_style, gui_style)
-
+let s:fg = 249
 let s:bg = get(g:, 'space_vim_dark_background', 235)
 
 let s:bias = s:bg - 235
-
 let s:bg0 = s:bg - 1
 let s:bg1 = s:bg + 1
 let s:bg2 = s:bg + 2
 let s:bg3 = s:bg + 3
 let s:bg4 = s:bg + 4
 
-let s:fg = 249
+" call s:hi(item, fg, bg, cterm, gui)
 
-call s:hi('Normal' , 249 , s:bg , 'None' , 'None' )
-hi Normal       guibg=#292b2e
+call s:hi('Normal' , 249 , s:bg , 'None' , 'None')
+call s:hi('Cursor' , 235 , 178  , 'bold' , 'bold')
 
-call s:hi('Cursor' , 88 , 214 , 'bold' , 'bold')
-hi Cursor       guifg=#330033 guibg=#FF9331
+call s:hi('LineNr' , 238+s:bias , s:bg0 , 'None' , 'None')
 
-call s:hi('LineNr'       , 238+s:bias , s:bg0 , 'None' , 'None' )
-
-call s:hi('CursorLine'   , ''  , s:bg0 , 'None' , 'None' )
-call s:hi('CursorLineNr' , 134 , s:bg0 , 'None' , 'None' )
+call s:hi('CursorLine'   , ''  , s:bg0 , 'None' , 'None')
+call s:hi('CursorLineNr' , 134 , s:bg0 , 'None' , 'None')
 call s:hi('CursorColumn' , ''  , s:bg0 , 'None' , 'None')
-call s:hi('ColorColumn' , ''  , s:bg0 , 'None' , 'None')
-hi LineNr       guifg=#44505c guibg=#212026
-hi CursorLine                 guibg=#212026
-hi CursorLineNr               guibg=#212026
-hi CursorColumn               guibg=#212026
-hi ColorColumn               guibg=#212026
+call s:hi('ColorColumn'  , ''  , s:bg0 , 'None' , 'None')
 
 " bug. opposite here.
 call s:hi('StatusLine'   , 140 , s:bg2 , 'None' , 'None')
-call s:hi('StatusLineNC' , 244 , s:bg1 , 'None' , 'None')
-hi StatusLineNC guibg=#3a3a3a
+call s:hi('StatusLineNC' , 242 , s:bg1 , 'None' , 'None')
+
 call s:hi('StatusLineTerm'   , 140 , s:bg2 , 'bold' , 'bold')
 call s:hi('StatusLineTermNC' , 244 , s:bg1 , 'bold' , 'bold')
 
@@ -116,10 +123,9 @@ call s:hi('TabLine'     , 66  , s:bg3 , 'None' , 'None')
 call s:hi('TabLineSel'  , 178 , s:bg4 , 'None' , 'None')
 call s:hi('TabLineFill' , 145 , s:bg2 , 'None' , 'None')
 
-call s:hi('WildMenu' , 214 , s:bg3 , 'None' , 'None')
-hi WildMenu guifg=#FF4848
+call s:hi('WildMenu'    , 214 , s:bg3 , 'None' , 'None')
 
-call s:hi('Boolean'     , 207 , '' , 'None' , 'None')
+call s:hi('Boolean'     , 178 , '' , 'None' , 'None')
 call s:hi('Character'   , 75  , '' , 'None' , 'None')
 call s:hi('Number'      , 176 , '' , 'None' , 'None')
 call s:hi('Float'       , 135 , '' , 'None' , 'None')
@@ -129,342 +135,266 @@ call s:hi('Constant'    , 218 , '' , 'None' , 'None')
 call s:hi('Debug'       , 225 , '' , 'None' , 'None')
 call s:hi('Define'      , 177 , '' , 'None' , 'None')
 call s:hi('Delimiter'   , 151 , '' , 'None' , 'None')
-hi Boolean         guifg=#FF68DD
-hi Character       guifg=#FF62B0
-hi Number          guifg=#E697E6
-hi Float           guifg=#B7B7FF
-hi String          guifg=#20af81
-hi Conditional     guifg=#4f97d7
-hi Constant        guifg=#d19a66
-hi Debug           guifg=#FFC8C8
-hi Define          guifg=#D881ED
-hi Delimiter       guifg=#74BAAC
 
 call s:hi('DiffAdd'    , ''  , 24  , 'None' , 'None')
 call s:hi('DiffChange' , 181 , 239 , 'None' , 'None')
 call s:hi('DiffDelete' , 162 , 53  , 'None' , 'None')
 call s:hi('DiffText'   , ''  , 102 , 'None' , 'None')
 
-call s:hi('Directory'  , 67  , ''  , 'bold' , 'bold')
-call s:hi('Exception'  , 203 , ''  , 'bold' , 'bold')
+call s:hi('Exception'  , 204 , ''  , 'bold' , 'bold')
 call s:hi('Function'   , 169 , ''  , 'bold' , 'bold')
 call s:hi('Identifier' , 167 , ''  , 'None' , 'None')
 call s:hi('Ignore'     , 244 , ''  , 'None' , 'None')
 call s:hi('Operator'   , 111 , ''  , 'None' , 'None')
 call s:hi('FoldColumn' , 67  , s:bg1 , 'None' , 'None')
 call s:hi('Folded'     , 133 , s:bg1 , 'bold' , 'bold')
-hi Ignore       guifg=#B4D1B6
-hi Function     guifg=#bc6ec5
 
 call s:hi('PreCondit' , 139 , '' , 'None' , 'None')
 call s:hi('PreProc'   , 176 , '' , 'None' , 'None')
 call s:hi('Question'  , 81  , '' , 'None' , 'None')
-call s:hi('Repeat'    , 68  , '' , 'bold' , 'bold')
-hi PreCondit    guifg=#D698FE
-hi PreProc      guifg=#DD75DD
-hi Question     guifg=#F9BB00
-hi Repeat       guifg=#4f97d7
 
-call s:hi('Keyword' , 68  , '' , 'bold' , 'bold')
-call s:hi('Label'   , 104 , '' , 'None' , 'None')
-call s:hi('Macro'   , 141 , '' , 'None' , 'None')
-hi Keyword      guifg=#4f97d7
-hi Label        guifg=#DF90FF
-
-call s:hi('Type'       , 168 , '' , 'None'      , 'None')
-call s:hi('Typedef'    , 204 , '' , 'None'      , 'None')
-call s:hi('Underlined' , '' , '' , 'underline' , 'underline')
-hi Type         guifg=#ce537a
-hi Typedef      guifg=#ce537a
-
+call s:hi('Directory' , 67 , '' , 'bold' , 'bold')
+call s:hi('Repeat'    , 68 , '' , 'bold' , 'bold')
+call s:hi('Keyword'   , 68 , '' , 'bold' , 'bold')
 call s:hi('Statement' , 68 , '' , 'None' , 'None')
-hi Statement guifg=#4f97d7
+call s:hi('Structure' , 68 , '' , 'bold' , 'bold')
 
-call s:hi('Search'    , 16 , 76 , 'bold' , 'bold')
-call s:hi('IncSearch' , 16 , 76 , 'bold' , 'bold')
-call s:hi('MatchParen', 40 , s:bg0, 'bold,underline', 'bold,underline')
-hi Search       guifg=#292b2e guibg=#86dc2f
-hi MatchParen   guifg=#00ff00 guibg=NONE
+call s:hi('Label'   , 104 , '' , 'None' , 'None')
+call s:hi('Macro'   , 140 , '' , 'None' , 'None')
+
+call s:hi('Type'       , 68 , '' , 'None'      , 'None')
+call s:hi('Typedef'    , 68 , '' , 'None'      , 'None')
+call s:hi('Underlined' , ''  , '' , 'underline' , 'underline')
+
+
+call s:hi('Search'    , 16 , 76    , 'bold' , 'bold')
+call s:hi('IncSearch' , 16 , 76    , 'bold' , 'bold')
+call s:hi('MatchParen', 40 , s:bg0 , 'bold,underline', 'bold,underline')
 
 call s:hi('ModeMsg'  , 229 , '' , 'None' , 'None')
-hi ModeMsg guifg=#FFF06A
 
 " Popup menu
 call s:hi('Pmenu'      , 141 , s:bg1 , 'None' , 'None')
-call s:hi('PmenuSel'   , 251 , 97  , 'None' , 'None')
-call s:hi('PmenuSbar'  , 28  , 233 , 'None' , 'None')
-call s:hi('PmenuThumb' , 160 , 97  , 'None' , 'None')
-hi Pmenu        guifg=#9a9aba guibg=#34323e
-hi PmenuSbar    guifg=#C269FE guibg=#303030
+call s:hi('PmenuSel'   , 251 , 97    , 'None' , 'None')
+call s:hi('PmenuSbar'  , 28  , 233   , 'None' , 'None')
+call s:hi('PmenuThumb' , 160 , 97    , 'None' , 'None')
 
 " SignColumn may relate to ale sign
 call s:hi('SignColumn' , 118 , s:bg , 'None' , 'None')
 call s:hi('Todo'       , 172 , s:bg , 'bold' , 'bold')
-hi Todo         guibg=NONE
-hi SignColumn   guibg=NONE
 
 " VertSplit consistent with normal background to hide it
 call s:hi('VertSplit' , s:bg0 , '' , 'None' , 'None')
-hi VertSplit    guibg=NONE
 
 call s:hi('Warning'    , 136 , '' , 'bold' , 'bold')
 call s:hi('WarningMsg' , 136 , '' , 'bold' , 'bold')
-hi Warning      guifg=#dc752f guibg=NONE
-hi WarningMsg   guifg=#dc752f guibg=NONE
 
 call s:hi('Error'    , 160 , s:bg , 'bold' , 'bold')
 call s:hi('ErrorMsg' , 196 , s:bg , 'bold' , 'bold')
-hi Error        guifg=#e0211d guibg=NONE
-hi ErrorMsg     guifg=#e0211d guibg=NONE
 
 call s:hi('Special'        , 169 , '' , 'None' , 'None')
 call s:hi('SpecialKey'     , 59  , '' , 'None' , 'None')
 call s:hi('SpecialChar'    , 171 , '' , 'bold' , 'bold')
 call s:hi('SpecialComment' , 24  , '' , 'None' , 'None')
-hi Special        guifg=#DD75DD
-hi SpecialKey     guifg=#FF73B9
-hi SpecialChar    guifg=#6094DB
-hi SpecialComment guifg=#3C8380
 
-" marks column
-call s:hi('SpellBad'   , 168 , '' , 'underline'    , 'undercurl')
-call s:hi('SpellCap'   , 110 , '' , 'underline'    , 'undercurl')
-call s:hi('SpellLocal' , 253 , '' , 'underline'    , 'undercurl')
-call s:hi('SpellRare'  , 218 , '' , 'underline'    , 'undercurl')
+call s:hi('SpellBad'   , 168 , '' , 'underline' , 'undercurl')
+call s:hi('SpellCap'   , 110 , '' , 'underline' , 'undercurl')
+call s:hi('SpellLocal' , 253 , '' , 'underline' , 'undercurl')
+call s:hi('SpellRare'  , 218 , '' , 'underline' , 'undercurl')
 
 call s:hi('Tag'          , 161 , ''  , 'None' , 'None')
 call s:hi('Title'        , 176 , ''  , 'None' , 'None')
-call s:hi('Structure'    , 68  , ''  , 'bold' , 'bold')
 call s:hi('StorageClass' , 178 , ''  , 'bold' , 'bold')
-hi Tag          guifg=#E469FE
-hi Title        guifg=#DD75DD
-hi Structure    guifg=#4f97d7
-hi StorageClass guifg=#d1951d
 
+call s:hi('Comment'   , 30 , ''    , 'None' , 'italic')
 call s:hi('Visual'    , '' , s:bg3 , 'None' , 'None')
-call s:hi('VisualNOS' , '' , 238      , 'None' , 'None')
-hi Visual guibg=#544A65
-
-call s:hi('Comment'  , 30  , ''  , 'None' , 'italic')
-hi Comment guifg=#2aa1ae
+call s:hi('VisualNOS' , '' , s:bg3 , 'None' , 'None')
 
 " tilde group
 call s:hi('NonText' , 241 , '' , 'None' , 'None')
-hi NonText guifg=#534B5D
+
+hi MatchParen   guibg=NONE
+hi SignColumn   guibg=NONE
 
 hi link qfLineNr Type
 
-hi SVDNormal  guifg=#b2b2b2 ctermfg=249
-hi SVDDark1   guifg=#3c3836 ctermfg=237
-hi SVDDark2   guifg=#504945 ctermfg=239
-hi SVDDark3   guifg=#665c54 ctermfg=241
-hi SVDDark4   guifg=#7c6f64 ctermfg=243
-
-hi SVDAqua    guifg=#2d9574 ctermfg=72
-hi SVDRed     guifg=#f2241f ctermfg=160
-hi SVDBlue    guifg=#4f97d7 ctermfg=68
-hi SVDGreen   guifg=#20af81 ctermfg=36
-hi SVDYellow  guifg=#67b11d ctermfg=114
-hi SVDOrange  guifg=#e1951d ctermfg=178
-hi SVDMagenta guifg=#e76a49 ctermfg=128
-
-hi SVDAquaBold   guifg=#2d9574 ctermfg=72  gui=bold cterm=bold
-hi SVDBlueBold   guifg=#4f97d7 ctermfg=68  gui=bold cterm=bold
-hi SVDGreenBold  guifg=#20af81 ctermfg=36  gui=bold cterm=bold
-hi SVDYellowBold guifg=#67b11d ctermfg=114 gui=bold cterm=bold
-hi SVDOrangeBold guifg=#e1951d ctermfg=137 gui=bold cterm=bold
-
-"""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Language
-"""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " markdown
-hi link markdownH1 SVDBlueBold
-hi link markdownH2 SVDGreenBold
-hi link markdownH3 SVDYellowBold
-hi link markdownH4 SVDOrangeBold
-hi link markdownH5 SVDBlue
-hi link markdownH6 SVDGreen
-hi link mkdCode    SVDYellow
-hi link mkdItalic  String
+call s:hi('markdownH1' , 68  , '' , 'bold' , 'bold')
+call s:hi('markdownH2' , 36  , '' , 'bold' , 'bold')
+call s:hi('markdownH3' , 114 , '' , 'bold' , 'bold')
+call s:hi('markdownH4' , 178 , '' , 'bold' , 'bold')
+call s:hi('markdownH5' , 68  , '' , 'None' , 'None')
+call s:hi('markdownH6' , 36  , '' , 'None' , 'None')
+call s:hi('mkdCode'    , 114 , '' , 'None' , 'None')
+call s:hi('mkdItalic'  , 36  , '' , 'None' , 'italic')
 
 " c
-hi link cConstant  SVDOrange
+call s:hi('cConstant', 178, '', 'none', 'none')
 
 " cpp
-hi cppExceptions       ctermfg=207 guifg=#CC3366 cterm=bold gui=bold
-hi link cppSTLexception cppExceptions
+call s:hi('cppSTLexception', 199, '', 'bold', 'bold')
+call s:hi('cppSTLnamespace', 178, '', 'bold', 'bold')
 
 " css
-hi link cssTagName SVDBlueBold
-hi link cssProp    Function
+call s:hi('cssTagName' , 68  , '' , 'bold' , 'bold')
+call s:hi('cssProp'    , 169 , '' , 'bold' , 'bold')
 
 " dot
-hi link dotKeyChar Number
-hi link dotType StorageClass
+call s:hi('dotKeyChar' , 176 , '' , 'none' , 'none')
+call s:hi('dotType'    , 178 , '' , 'none' , 'none')
 
 " sh
-hi link shSet         SVDBlueBold
-hi link shLoop        SVDBlueBold
-hi link shFunctionKey SVDBlueBold
-hi link shTestOpr     SVDOrange
+call s:hi('shSet'         , 68  , '' , 'bold' , 'bold')
+call s:hi('shLoop'        , 68  , '' , 'bold' , 'bold')
+call s:hi('shFunctionKey' , 68  , '' , 'bold' , 'bold')
+call s:hi('shTestOpr'     , 178 , '' , 'none' , 'none')
 
 " solidity
-hi link solContract  SVDOrangeBold
+call s:hi('solContract' , 178 , '' , 'bold' , 'bold')
 
 " vimL
-hi link vimLet     SVDBlueBold
-hi link vimFuncKey SVDBlueBold
-hi link vimCommand SVDBlueBold
-hi link vimGroup   Directory
-hi link vimHiGroup Directory
+call s:hi('vimLet'     , 68 , '' , 'bold' , 'bold')
+call s:hi('vimFuncKey' , 68 , '' , 'bold' , 'bold')
+call s:hi('vimCommand' , 68 , '' , 'bold' , 'bold')
+call s:hi('vimGroup'   , 67 , '' , 'bold' , 'bold')
+call s:hi('vimHiGroup' , 67 , '' , 'bold' , 'bold')
 
 " rust
-hi link rustKeyword SVDBlueBold
-hi link rustModPath SVDBlue
-call s:hi('rustTrait'       , 168 , '' , 'bold'      , 'bold')
-hi Type         guifg=#ce537a
+call s:hi('rustKeyword' , 68  , '' , 'bold' , 'bold')
+call s:hi('rustModPath' , 68  , '' , 'none' , 'none')
+call s:hi('rustTrait'   , 168 , '' , 'bold' , 'bold')
 
 " json
-hi link jsonStringSQError SVDRed
+call s:hi('jsonStringSQError', 160, '', 'none', 'none')
 
 " xml
-hi link xmlTag     Identifier
-hi link xmlEndTag  Identifier
-hi link xmlTagName Identifier
+call s:hi('xmlTag'     , 167 , '' , 'none' , 'none')
+call s:hi('xmlEndTag'  , 167 , '' , 'none' , 'none')
+call s:hi('xmlTagName' , 167 , '' , 'none' , 'none')
 
 " go
-hi link goMethodCall      Function
-hi link goReceiverType    SVDYellow
-hi link goTypeConstructor SVDOrange
-hi link goType            PreProc
-hi link goFloats          Float
-hi link goFormatSpecifier SVDBlue
-hi link goPredefinedIdentifiers SVDMagenta
-call s:hi('goTypeName', 169, '', 'bold', 'bold')
-call s:hi('goFunction', 168, '', 'bold', 'bold')
-hi link goFunctionCall    goFunction
+call s:hi('goType'                  , 176   , '' , 'none' , 'none')
+call s:hi('goFloat'                 , 135   , '' , 'none' , 'none')
+call s:hi('goField'                 , 68    , '' , 'none' , 'none')
+call s:hi('goTypeName'              , 169   , '' , 'bold' , 'bold')
+call s:hi('goFunction'              , 169   , '' , 'bold' , 'bold')
+call s:hi('goMethodCall'            , 168   , '' , 'bold' , 'bold')
+call s:hi('goReceiverType'          , 114   , '' , 'none' , 'none')
+call s:hi('goFunctionCall'          , 169   , '' , 'bold' , 'bold')
+call s:hi('goFormatSpecifier'       , 68    , '' , 'none' , 'none')
+call s:hi('goTypeConstructor'       , 178   , '' , 'none' , 'none')
+call s:hi('goPredefinedIdentifiers' , '140' , '' , 'none' , 'none')
 
 " make
-hi link makeCommands      SVDBlue
-hi link makeSpecTarget    SVDBlueBold
+call s:hi('makeCommands'   , 68 , '' , 'none' , 'none')
+call s:hi('makeSpecTarget' , 68 , '' , 'bold' , 'bold')
 
 " java
-hi link javaScopeDecl keyword
-hi link javaClassDecl Function
+call s:hi('rustScopeDecl' , 68  , '' , 'bold' , 'bold')
+call s:hi('javaClassDecl' , 168 , '' , 'bold' , 'bold')
 
 " scala
-hi link scalaKeyword SVDBlueBold
-hi link scalaNameDefinition SVDBlueBold
+call s:hi('scalaKeyword'        , 68 , '' , 'bold' , 'bold')
+call s:hi('scalaNameDefinition' , 68 , '' , 'bold' , 'bold')
 
 " ruby
-hi link rubyClass SVDBlueBold
-hi link rubyDefine SVDBlueBold
-hi link rubyInterpolationDelimiter Number
+call s:hi('rubyClass'                  , 68  , '' , 'bold' , 'bold')
+call s:hi('rubyDefine'                 , 68  , '' , 'bold' , 'bold')
+call s:hi('rubyInterpolationDelimiter' , 176 , '' , 'none' , 'none')
 
 " html
 hi link htmlSpecialTagName Tag
-hi link htmlItalic String
+call s:hi('htmlItalic'  , 36  , '' , 'None' , 'italic')
 
 " python-mode
-hi pythonLambdaExpr      ctermfg=105 guifg=#8787ff
-hi pythonInclude         ctermfg=68  guifg=#5f87d7 cterm=bold gui=bold
-hi pythonClass           ctermfg=207 guifg=#FF62B0 cterm=bold gui=bold
-hi pythonParameters      ctermfg=147 guifg=#AAAAFF
-hi pythonParam           ctermfg=108 guifg=#67b11d
-hi pythonBrackets        ctermfg=183 guifg=#d7afff
-hi pythonClassParameters ctermfg=111 guifg=#FF5353
-hi pythonSelf            ctermfg=68  guifg=#5f87d7 cterm=bold gui=bold
+call s:hi('pythonLambdaExpr'      , 105 , '' , 'none' , 'none')
+call s:hi('pythonClass'           , 207 , '' , 'bold' , 'bold')
+call s:hi('pythonParameters'      , 147 , '' , 'none' , 'none')
+call s:hi('pythonParam'           , 108 , '' , 'none' , 'none')
+call s:hi('pythonBrackets'        , 183 , '' , 'none' , 'none')
+call s:hi('pythonClassParameters' , 111 , '' , 'none' , 'none')
+call s:hi('pythonBuiltinType'     , 68  , '' , 'none' , 'none')
+call s:hi('pythonBuiltinObj'      , 71  , '' , 'bold' , 'bold')
+call s:hi('pythonBuiltinFunc'     , 169 , '' , 'bold' , 'bold')
+call s:hi('pythonOperator'        , 68  , '' , 'bold' , 'bold')
+call s:hi('pythonInclude'         , 68  , '' , 'bold' , 'bold')
+call s:hi('pythonSelf'            , 68  , '' , 'bold' , 'bold')
+call s:hi('pythonStatement'       , 68  , '' , 'bold' , 'bold')
+call s:hi('pythonDottedName'      , 169 , '' , 'bold' , 'bold')
+call s:hi('pythonDecorator'       , 169 , '' , 'bold' , 'bold')
+call s:hi('pythonException'       , 160 , '' , 'bold' , 'bold')
+call s:hi('pythonError'           , 196 , '' , 'none' , 'none')
+call s:hi('pythonIndentError'     , 196 , '' , 'none' , 'none')
+call s:hi('pythonSpaceError'      , 196 , '' , 'none' , 'none')
 
-hi link pythonOperator  SVDBlueBold
-hi link pythonStatement SVDBlueBold
-
-call s:hi('pythonDottedName'   , 169 , ''  , 'bold' , 'bold')
-call s:hi('pythonDecorator'    , 169 , ''  , 'bold' , 'bold')
-
-hi pythonError           ctermfg=196 guifg=#ff0000
-hi pythonIndentError     ctermfg=197 guifg=#ff005f
-hi pythonSpaceError      ctermfg=198 guifg=#ff0087
-
-hi link pythonBuiltinType SVDBlue
-hi pythonBuiltinObj      ctermfg=71  guifg=#5faf5f cterm=bold gui=bold
-hi pythonBuiltinFunc     ctermfg=169 guifg=#d75faf cterm=bold gui=bold
-
-hi pythonException       ctermfg=161 guifg=#CC3366 cterm=bold gui=bold
-
-"""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
-"""""""""""""""""""""""""""""""""""""""""""
-"ALE {
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ALE
 hi link ALEErrorSign    Error
 hi link ALEWarningSign  Warning
-"}
 
-" vim-indent-guides {
+" vim-markdown
+call s:hi('htmlH1' , 68  , '' , 'bold' , 'bold')
+call s:hi('htmlH2' , 36  , '' , 'bold' , 'bold')
+call s:hi('htmlH3' , 114 , '' , 'bold' , 'bold')
+call s:hi('htmlH4' , 178 , '' , 'bold' , 'bold')
+call s:hi('htmlH5' , 68  , '' , 'None' , 'None')
+call s:hi('htmlH6' , 36  , '' , 'None' , 'None')
+
+" vim-indent-guides
 let g:indent_guides_auto_colors = 0
-hi IndentGuidesOdd  guibg=#708090 ctermbg=237
-hi IndentGuidesEven guibg=#696969 ctermbg=239
-" }
+call s:hi('IndentGuidesOdd'  , '' , 237 , 'none' , 'none')
+call s:hi('IndentGuidesEven' , '' , 239 , 'none' , 'none')
 
-" vim-gitgutter {
-hi link GitGutterAdd          SVDGreen
-hi link GitGutterChange       SVDOrange
-hi link GitGutterDelete       SVDRed
-hi link GitGutterChangeDelete SVDMagenta
-" }
+" vim-gitgutter
+call s:hi('GitGutterAdd'          , 36  , '' , 'none' , 'none')
+call s:hi('GitGutterChange'       , 178 , '' , 'none' , 'none')
+call s:hi('GitGutterDelete'       , 160 , '' , 'none' , 'none')
+call s:hi('GitGutterChangeDelete' , 140 , '' , 'none' , 'none')
 
-" vim-markdown {
-hi link htmlH1 SVDBlueBold
-hi link htmlH2 SVDGreenBold
-hi link htmlH3 SVDYellowBold
-hi link htmlH4 SVDOrangeBold
-hi link htmlH5 SVDBlue
-hi link htmlH6 SVDGreen
-" }
+" vim-signify
+call s:hi('SignifySignAdd'    , 36  , '' , 'none' , 'none')
+call s:hi('SignifySignChange' , 178 , '' , 'none' , 'none')
+call s:hi('SignifySignDelete' , 160 , '' , 'none' , 'none')
 
-" vim-signify {
-hi link SignifySignAdd    SVDGreen
-hi link SignifySignChange SVDAqua
-hi link SignifySignDelete SVDRed
-" }
+" vim-startify
+hi link StartifyFile Normal
+call s:hi('StartifyHeader'  , 177 , '' , 'none' , 'none')
+call s:hi('startifySection' , 68  , '' , 'bold' , 'bold')
 
-" vim-startify {
-hi link StartifyFile    Normal
-hi link StartifyHeader  Define
-hi link StartifySection SVDBlueBold
-" }
+" YouCompleteMe
+call s:hi('YcmErrorSection'   , 249 , 5  , 'none' , 'none')
+call s:hi('YcmWarningSection' , 249 , 60 , 'none' , 'none')
 
-" YouCompleteMe {
-hi YcmErrorSection   guibg=#800080 guifg=#b2b2b2 ctermbg=5  ctermfg=249
-hi YcmWarningSection guibg=#5f5f87 guifg=#b2b2b2 ctermbg=60 ctermfg=249
-" }
+" vim-leader-guide
+hi link LeaderGuideDesc Normal
+call s:hi('LeaderGuideKeys'     , 169 , '' , 'bold' , 'bold')
+call s:hi('LeaderGuideBrackets' , 36  , '' , 'none' , 'none')
 
-" vim-leader-guide {
-hi link LeaderGuideKeys     Function
-hi link LeaderGuideDesc     SVDNormal
-hi link LeaderGuideBrackets SVDGreen
-" }
+" NERDTree
+call s:hi('NERDTreeCWD'      , 169 , '' , 'bold' , 'bold')
+call s:hi('NERDTreeUp'       , 68  , '' , 'bold' , 'bold')
+call s:hi('NERDTreeDir'      , 68  , '' , 'bold' , 'bold')
+call s:hi('NERDTreeDirSlash' , 68  , '' , 'bold' , 'bold')
+call s:hi('NERDTreeOpenable' , 68  , '' , 'bold' , 'bold')
+call s:hi('NERDTreeClosable' , 68  , '' , 'bold' , 'bold')
 
-" NERDTree {
-hi link NERDTreeCWD       Function
-hi link NERDTreeUp        SVDBlueBold
-hi link NERDTreeDir       SVDBlueBold
-hi link NERDTreeDirSlash  SVDBlueBold
-hi link NERDTreeOpenable  SVDBlueBold
-hi link NERDTreeClosable  SVDBlueBold
-" }
-
-" Tagbar {
-call s:hi('TagbarHighlight'        , 16  , 36 , 'bold' , 'bold')
-call s:hi('TagbarVisibilityPublic' , 34  , '' , 'none' , 'none')
+" Tagbar
+call s:hi('TagbarKind'             , 169 , '' , 'bold' , 'bold')
 call s:hi('TagbarScope'            , 169 , '' , 'bold' , 'bold')
-hi link TagbarKind       Function
-hi link TagbarNestedKind SVDBlueBold
-" }
+call s:hi('TagbarHighlight'        , 16  , 36 , 'bold' , 'bold')
+call s:hi('TagbarNestedKind'       , 68  , '' , 'bold' , 'bold')
+call s:hi('TagbarVisibilityPublic' , 34  , '' , 'none' , 'none')
 
-hi link SignatureMarkText SVDOrange
+" vim-signature
+call s:hi('SignatureMarkText', 178, '', 'bold', 'bold')
 
 delf s:hi
-unlet s:color_map s:bg
+unlet s:color256 s:colors s:bg
 
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
