@@ -339,6 +339,11 @@ call s:hi('pythonSpaceError'      , 196 , '' , 'none' , 'none')
 hi link ALEErrorSign    Error
 hi link ALEWarningSign  Warning
 
+" vim-easymotion
+call s:hi('EasyMotionTarget', 76, '', 'none', 'none')
+call s:hi('EasyMotionTarget2First', 76, '', 'none', 'none')
+call s:hi('EasyMotionTarget2Second', 36, '', 'none', 'none')
+
 " vim-markdown
 call s:hi('htmlH1' , 68  , '' , 'bold' , 'bold')
 call s:hi('htmlH2' , 36  , '' , 'bold' , 'bold')
