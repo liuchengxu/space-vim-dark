@@ -278,17 +278,17 @@ call s:hi('xmlEndTag'  , 167 , '' , 'none' , 'none')
 call s:hi('xmlTagName' , 167 , '' , 'none' , 'none')
 
 " go
-call s:hi('goType'                  , 176   , '' , 'none' , 'none')
-call s:hi('goFloat'                 , 135   , '' , 'none' , 'none')
-call s:hi('goField'                 , 68    , '' , 'none' , 'none')
-call s:hi('goTypeName'              , 169   , '' , 'bold' , 'bold')
-call s:hi('goFunction'              , 169   , '' , 'bold' , 'bold')
-call s:hi('goMethodCall'            , 168   , '' , 'bold' , 'bold')
-call s:hi('goReceiverType'          , 114   , '' , 'none' , 'none')
-call s:hi('goFunctionCall'          , 169   , '' , 'bold' , 'bold')
-call s:hi('goFormatSpecifier'       , 68    , '' , 'none' , 'none')
-call s:hi('goTypeConstructor'       , 178   , '' , 'none' , 'none')
-call s:hi('goPredefinedIdentifiers' , '140' , '' , 'none' , 'none')
+call s:hi('goType'                  , 176 , '' , 'none' , 'none')
+call s:hi('goFloat'                 , 135 , '' , 'none' , 'none')
+call s:hi('goField'                 , 68  , '' , 'none' , 'none')
+call s:hi('goTypeName'              , 169 , '' , 'bold' , 'bold')
+call s:hi('goFunction'              , 169 , '' , 'bold' , 'bold')
+call s:hi('goMethodCall'            , 168 , '' , 'bold' , 'bold')
+call s:hi('goReceiverType'          , 114 , '' , 'none' , 'none')
+call s:hi('goFunctionCall'          , 169 , '' , 'bold' , 'bold')
+call s:hi('goFormatSpecifier'       , 68  , '' , 'none' , 'none')
+call s:hi('goTypeConstructor'       , 178 , '' , 'none' , 'none')
+call s:hi('goPredefinedIdentifiers' , 140 , '' , 'none' , 'none')
 
 " make
 call s:hi('makeCommands'   , 68 , '' , 'none' , 'none')
@@ -340,9 +340,9 @@ hi link ALEErrorSign    Error
 hi link ALEWarningSign  Warning
 
 " vim-easymotion
-call s:hi('EasyMotionTarget', 76, '', 'none', 'none')
-call s:hi('EasyMotionTarget2First', 76, '', 'none', 'none')
-call s:hi('EasyMotionTarget2Second', 36, '', 'none', 'none')
+call s:hi('EasyMotionTarget'        , 76 , '' , 'bold' , 'bold')
+call s:hi('EasyMotionTarget2First'  , 76 , '' , 'none' , 'none')
+call s:hi('EasyMotionTarget2Second' , 36 , '' , 'none' , 'none')
 
 " vim-markdown
 call s:hi('htmlH1' , 68  , '' , 'bold' , 'bold')
