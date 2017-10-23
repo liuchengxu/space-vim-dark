@@ -340,9 +340,9 @@ hi link ALEErrorSign    Error
 hi link ALEWarningSign  Warning
 
 " vim-easymotion
-call s:hi('EasyMotionTarget'        , 76 , '' , 'bold' , 'bold')
-call s:hi('EasyMotionTarget2First'  , 76 , '' , 'none' , 'none')
-call s:hi('EasyMotionTarget2Second' , 36 , '' , 'none' , 'none')
+call s:hi('EasyMotionTarget'        , 76  , '' , 'bold' , 'bold')
+call s:hi('EasyMotionTarget2First'  , 162 , '' , 'bold' , 'bold')
+call s:hi('EasyMotionTarget2Second' , 69  , '' , 'bold' , 'bold')
 
 " vim-markdown
 call s:hi('htmlH1' , 68  , '' , 'bold' , 'bold')
