@@ -400,6 +400,10 @@ call s:hi('TagbarVisibilityPublic' , 34  , '' , 'none' , 'none')
 " vim-signature
 call s:hi('SignatureMarkText', 178, '', 'bold', 'bold')
 
+" vim_current_word
+call s:hi('CurrentWord'      , '' , s:bg2 , 'underline' , 'underline')
+call s:hi('CurrentWordTwins' , '' , s:bg1 , 'none'      , 'none')
+
 delf s:hi
 unlet s:color256 s:colors s:bg
 
