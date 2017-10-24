@@ -401,7 +401,7 @@ call s:hi('TagbarVisibilityPublic' , 34  , '' , 'none' , 'none')
 call s:hi('SignatureMarkText', 178, '', 'bold', 'bold')
 
 " vim_current_word
-call s:hi('CurrentWord'      , '' , s:bg2 , 'underline' , 'underline')
+call s:hi('CurrentWord'      , '' , s:bg1 , 'underline' , 'underline')
 call s:hi('CurrentWordTwins' , '' , s:bg1 , 'none'      , 'none')
 
 delf s:hi
