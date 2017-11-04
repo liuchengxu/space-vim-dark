@@ -364,9 +364,10 @@ call s:hi('GitGutterDelete'       , 160 , '' , 'none' , 'none')
 call s:hi('GitGutterChangeDelete' , 140 , '' , 'none' , 'none')
 
 " vim-signify
-call s:hi('SignifySignAdd'    , 36  , '' , 'none' , 'none')
-call s:hi('SignifySignChange' , 178 , '' , 'none' , 'none')
-call s:hi('SignifySignDelete' , 160 , '' , 'none' , 'none')
+call s:hi('SignifySignAdd'         , 36  , '' , 'none' , 'none')
+call s:hi('SignifySignChange'      , 178 , '' , 'none' , 'none')
+call s:hi('SignifySignDelete'      , 160 , '' , 'none' , 'none')
+call s:hi('SignifySignChangeDelete', 140 , '' , 'none' , 'none')
 
 " vim-startify
 hi link StartifyFile Normal
