@@ -17,6 +17,12 @@ If you want to enable italics in terminal:
     hi Comment cterm=italic
     ```
 
+**GNOME Terminal**
+
+```bash
+$ cd gnome && ./space-vim-dark.sh
+```
+
 ## GUI or Terminal with true colors enabled
 
 ![screenshot](https://raw.githubusercontent.com/liuchengxu/img/master/space-vim/space-vim-gui.png)

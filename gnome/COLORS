@@ -1,0 +1,23 @@
+space-vim-dark
+
+Black:          #292b2e
+Bright Black:   #68727c
+Red:            #d75f87
+Bright Red:     #ff5f87
+Green:          #20af81
+Bright Green:   #84d96f
+Yellow:         #b1951d
+Bright Yellow:  #eead0e
+Blue:           #7590db
+Light Blue:     #4f97d7
+Magenta:        #a45bad
+Light Magenta:  #dd75dd
+Cyan:           #2aa1ae
+Light Cyan:     #21b8c7
+White:          #cccccc
+Bright White:   #e6e5e5
+Text:           #b2b2b2
+Bold Text:      #c56ec3
+Selection:      #5d4d7a
+Cursor:         #e3dedd
+Background:     #292b2e
