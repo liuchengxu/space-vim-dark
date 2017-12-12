@@ -1,0 +1,112 @@
+! Space-Vim-Dark Colour scheme
+! -----------------------------
+! Colour scheme for X based on
+! the space-vim-dark Vim theme
+! -----------------------------
+
+! Colour Codes
+! 0,8  => Black
+! 1,9  => Red
+! 2,10 => Green
+! 3,11 => Yellow
+! 4,12 => Blue
+! 5,13 => Magenta
+! 6,14 => Cyan
+! 7,15 => White
+
+! Base16 Colour Mappings
+! foreground  => base05
+! background  => base00
+! cursorColor => base05
+! color0      => base00
+! color1      => base08
+! color2      => base0B
+! color3      => base0A
+! color4      => base0D
+! color5      => base0E
+! color6      => base0C
+! color7      => base05
+! color8      => base03
+! color9      => base09
+! color10     => base01
+! color11     => base02
+! color12     => base04
+! color13     => base06
+! color14     => base0F
+! color15     => base07
+! color16     => base09
+! color17     => base0F
+! color18     => base01
+! color19     => base02
+! color20     => base04
+! color21     => base06
+
+! Colours can be set like
+! * magenta      -- Xterm
+! * yellow3      -- Xterm
+! * #21ff4c      -- Hex
+! * rgb:5c/21/ff -- RGB
+! Transparency
+! * rgba:0000/0000/0200/c800
+
+
+! 'Base16' Style colour definitions
+! this allows for greater portability
+#define base00 #262626
+#define base01 #96e931
+#define base02 #e89e0f
+#define base03 #555f69
+#define base04 #4083cd
+#define base05 #a3a3a3
+#define base06 #d358d5
+#define base07 #dfdfdf
+#define base08 #cb4674
+#define base09 #fc4474
+#define base0A #a18417
+#define base0B #74d55c
+#define base0C #25919e
+#define base0D #627ad2
+#define base0E #91429d
+#define base0F #22abbb
+
+! Alternative colours
+! base00 #1f2022
+! base05 #c1c1c1
+
+
+! Set the colours from the colour definitions
+*.foreground:  base05
+#ifdef background_opacity
+*.background:  [background_opacity]base00
+#else
+*.background:  base00
+#endif
+*.cursorColor: base05
+
+*.color0:  base00
+*.color1:  base08
+*.color2:  base0B
+*.color3:  base0A
+*.color4:  base0D
+*.color5:  base0E
+*.color6:  base0C
+*.color7:  base05
+
+*.color8:  base03
+*.color9:  base09
+*.color10: base01
+*.color11: base02
+*.color12: base04
+*.color13: base06
+*.color14: base0F
+*.color15: base07
+
+*.color16: base09
+*.color17: base0F
+*.color18: base01
+*.color19: base02
+*.color20: base04
+*.color21: base06
+
+
+! vim: ft=xdefaults
