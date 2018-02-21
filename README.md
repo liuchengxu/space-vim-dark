@@ -25,6 +25,17 @@ If you want to enable italics in terminal:
     hi Comment cterm=italic
     ```
 
+if you want to make the background transparent, override the related items in your vimrc:
+
+```vim
+colorscheme space-vim-dark
+hi Normal     ctermbg=NONE guibg=NONE
+hi LineNr     ctermbg=NONE guibg=NONE
+hi SignColumn ctermbg=NONE guibg=NONE
+```
+
+<img width="421" alt="2018-02-20 10 28 41" src="https://user-images.githubusercontent.com/8850248/36429354-75870ba6-168d-11e8-939a-34956e3c24b9.png">
+
 ## GUI or Terminal with true colors enabled
 
 ![screenshot](https://raw.githubusercontent.com/liuchengxu/img/master/space-vim/space-vim-gui.png)
