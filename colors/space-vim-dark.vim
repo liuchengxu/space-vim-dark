@@ -214,6 +214,8 @@ call s:hi('VisualNOS' , '' , s:bg3 , 'None' , 'None')
 " tilde group
 call s:hi('NonText' , 241 , '' , 'None' , 'None')
 
+call s:hi('Terminal' , 249 , s:bg , 'None' , 'None')
+
 hi MatchParen   guibg=NONE
 hi SignColumn   guibg=NONE
 
@@ -408,6 +410,10 @@ call s:hi('SignatureMarkText', 178, '', 'bold', 'bold')
 " vim_current_word
 call s:hi('CurrentWord'      , '' , s:bg1 , 'underline' , 'underline')
 call s:hi('CurrentWordTwins' , '' , s:bg1 , 'none'      , 'none')
+
+" quick-scope
+call s:hi('QuickScopePrimary'   , 155 , '' , 'underline' , 'underline')
+call s:hi('QuickScopeSecondary' , 81  , '' , 'underline' , 'underline')
 
 delf s:hi
 unlet s:color256 s:colors s:bg
