@@ -216,6 +216,9 @@ call s:hi('NonText' , 241 , '' , 'None' , 'None')
 
 call s:hi('Terminal' , 249 , s:bg , 'None' , 'None')
 
+call s:hi('diffAdded'   , 36  , '' , 'None' , 'None')
+call s:hi('diffRemoved' , 167 , '' , 'None' , 'None')
+
 hi MatchParen   guibg=NONE
 hi SignColumn   guibg=NONE
 
