@@ -169,7 +169,7 @@ call s:hi('Typedef'    , 68 , '' , 'None'      , 'None')
 call s:hi('Underlined' , ''  , '' , 'underline' , 'underline')
 
 call s:hi('Search'    , 16 , 76    , 'bold' , 'bold')
-call s:hi('IncSearch' , 16 , 76    , 'bold' , 'bold')
+call s:hi('IncSearch' , 16 , 167   , 'bold' , 'bold')
 call s:hi('MatchParen', 40 , s:bg0 , 'bold,underline', 'bold,underline')
 
 call s:hi('ModeMsg'  , 229 , '' , 'None' , 'None')
