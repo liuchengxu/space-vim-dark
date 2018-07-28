@@ -46,8 +46,13 @@ Plug 'liuchengxu/space-vim-dark'
 
 ## GUI or Terminal with true colors enabled
 
+```vim
+color space-vim-dark
+set termguicolors
+hi LineNr ctermbg=NONE guibg=NONE
+```
+
 ![screenshot](https://raw.githubusercontent.com/liuchengxu/img/master/space-vim/space-vim-gui.png)
-(Terminal with `set termguicolors`)
 
 ## Cterm (256 colors)
 
