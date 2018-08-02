@@ -82,7 +82,7 @@ let s:colors = {
       \ 168: '#ce537a', 169: '#bc6ec5', 171: '#6094DB', 173: '#e18254', 176: '#E697E6', 177: '#D881ED',
       \ 178: '#d1951d', 179: '#d4b261', 196: '#e0211d', 204: '#ce537a', 207: '#FF68DD', 214: '#FF4848',
       \ 218: '#d19a66', 225: '#FFC8C8', 229: '#fff06a', 233: '#303030', 234: '#212026', 235: '#292b2e',
-      \ 236: '#34323e', 238: '#544a65', 241: '#534b5d', 244: '#b4d1b6',
+      \ 236: '#34323e', 238: '#544a65', 241: '#534b5d', 243: '#65737e', 244: '#b4d1b6',
       \ }
 
 function! s:hi(item, fg, bg, cterm, gui)
@@ -196,7 +196,7 @@ call s:hi('ErrorMsg' , 196 , s:bg , 'bold' , 'bold')
 call s:hi('Special'        , 169 , '' , 'None' , 'None')
 call s:hi('SpecialKey'     , 59  , '' , 'None' , 'None')
 call s:hi('SpecialChar'    , 171 , '' , 'bold' , 'bold')
-call s:hi('SpecialComment' , 24  , '' , 'None' , 'None')
+call s:hi('SpecialComment' , 243  , '' , 'None' , 'None')
 
 call s:hi('SpellBad'   , 168 , '' , 'underline' , 'undercurl')
 call s:hi('SpellCap'   , 110 , '' , 'underline' , 'undercurl')
