@@ -79,10 +79,11 @@ let s:colors = {
       \ 59: '#FF73B9', 68: '#4f97d7', 75: '#FF62B0', 76: '#86dc2f', 81: '#f9bb00', 88: '#330033',
       \ 104: '#df90ff', 114: '#67b11d', 128: '#e76a49', 135: '#B7B7FF', 136: '#dc752f', 139: '#d698fe',
       \ 140: '#b888e2', 141: '#9a9aba', 151: '#74BAAC', 160: '#e0211d', 161: '#E469FE', 167: '#ce537a',
-      \ 168: '#ce537a', 169: '#bc6ec5', 171: '#6094DB', 173: '#e18254', 176: '#E697E6', 177: '#D881ED',
-      \ 178: '#d1951d', 179: '#d4b261', 196: '#e0211d', 204: '#ce537a', 207: '#FF68DD', 214: '#FF4848',
-      \ 218: '#d19a66', 225: '#FFC8C8', 229: '#fff06a', 233: '#303030', 234: '#212026', 235: '#292b2e',
-      \ 236: '#34323e', 238: '#544a65', 241: '#534b5d', 243: '#65737e', 244: '#b4d1b6',
+      \ 168: '#ce537a', 169: '#bc6ec5', 170: '#bc6ec5', 171: '#6094DB', 173: '#e18254', 176: '#E697E6',
+      \ 177: '#D881ED', 178: '#d1951d', 179: '#d4b261', 196: '#e0211d', 204: '#ce537a', 207: '#FF68DD',
+      \ 214: '#FF4848', 218: '#d19a66', 225: '#FFC8C8', 229: '#fff06a', 233: '#303030', 234: '#212026',
+      \ 235: '#292b2e', 236: '#34323e', 238: '#544a65', 239: '#44505c', 241: '#534b5d', 243: '#65737e',
+      \ 244: '#b4d1b6',
       \ }
 
 function! s:hi(item, fg, bg, cterm, gui)
@@ -107,12 +108,12 @@ let s:bg4 = s:bg + 4
 call s:hi('Normal' , 249 , s:bg , 'None' , 'None')
 call s:hi('Cursor' , 235 , 178  , 'bold' , 'bold')
 
-call s:hi('LineNr' , 238+s:bias , s:bg0 , 'None' , 'None')
+call s:hi('LineNr' , 239+s:bias , s:bg0 , 'None' , 'None')
 
-call s:hi('CursorLine'   , ''  , s:bg0 , 'None' , 'None')
-call s:hi('CursorLineNr' , 134 , s:bg0 , 'None' , 'None')
-call s:hi('CursorColumn' , ''  , s:bg0 , 'None' , 'None')
-call s:hi('ColorColumn'  , ''  , s:bg0 , 'None' , 'None')
+call s:hi('CursorLine'   , ''  , s:bg0   , 'None' , 'None')
+call s:hi('CursorLineNr' , 170 , s:bg0-1 , 'None' , 'None')
+call s:hi('CursorColumn' , ''  , s:bg0   , 'None' , 'None')
+call s:hi('ColorColumn'  , ''  , s:bg0   , 'None' , 'None')
 
 " bug. opposite here.
 call s:hi('StatusLine'   , 140 , s:bg2 , 'None' , 'None')
@@ -268,6 +269,7 @@ call s:hi('solBuiltinType'  , 176 , '' , 'none' , 'none')
 call s:hi('vimLet'     , 68 , '' , 'bold' , 'bold')
 call s:hi('vimFuncKey' , 68 , '' , 'bold' , 'bold')
 call s:hi('vimCommand' , 68 , '' , 'bold' , 'bold')
+call s:hi('vimMap'     , 68 , '' , 'none' , 'none')
 call s:hi('vimGroup'   , 67 , '' , 'bold' , 'bold')
 call s:hi('vimHiGroup' , 67 , '' , 'bold' , 'bold')
 
