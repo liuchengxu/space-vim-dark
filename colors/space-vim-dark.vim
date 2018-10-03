@@ -95,6 +95,7 @@ endfunction
 
 let s:fg = 249
 let s:bg = get(g:, 'space_vim_dark_background', 235)
+let s:bg = max([s:bg, 233])
 
 let s:bias = s:bg - 235
 let s:bg0 = s:bg - 1
@@ -111,7 +112,7 @@ call s:hi('Cursor' , 235 , 178  , 'bold' , 'bold')
 call s:hi('LineNr' , 239+s:bias , s:bg0 , 'None' , 'None')
 
 call s:hi('CursorLine'   , ''  , s:bg0   , 'None' , 'None')
-call s:hi('CursorLineNr' , 170 , s:bg0-1 , 'None' , 'None')
+call s:hi('CursorLineNr' , 170 , s:bg0   , 'None' , 'None')
 call s:hi('CursorColumn' , ''  , s:bg0   , 'None' , 'None')
 call s:hi('ColorColumn'  , ''  , s:bg0   , 'None' , 'None')
 
