@@ -287,6 +287,12 @@ call s:hi('xmlTag'     , 167 , '' , 'none' , 'none')
 call s:hi('xmlEndTag'  , 167 , '' , 'none' , 'none')
 call s:hi('xmlTagName' , 167 , '' , 'none' , 'none')
 
+" js
+call s:hi('jsReturn' , 68 , '' , 'bold' , 'bold')
+hi link jsObjectKey Type
+hi link jsFuncBlock Identifier
+hi link jsVariableDef Title
+
 " go
 call s:hi('goType'                  , 176 , '' , 'none' , 'none')
 call s:hi('goFloat'                 , 135 , '' , 'none' , 'none')
