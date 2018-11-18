@@ -326,6 +326,7 @@ call s:hi('rubyInterpolationDelimiter' , 176 , '' , 'none' , 'none')
 " html
 hi link htmlSpecialTagName Tag
 call s:hi('htmlItalic'  , 36  , '' , 'None' , 'italic')
+hi htmlBold cterm=bold gui=bold
 
 " python-mode
 call s:hi('pythonLambdaExpr'      , 105 , '' , 'none' , 'none')
