@@ -380,10 +380,10 @@ call s:hi('IndentGuidesOdd'  , '' , 237 , 'none' , 'none')
 call s:hi('IndentGuidesEven' , '' , 239 , 'none' , 'none')
 
 " vim-gitgutter
-call s:hi('GitGutterAdd'          , 36  , '' , 'none' , 'none')
-call s:hi('GitGutterChange'       , 178 , '' , 'none' , 'none')
-call s:hi('GitGutterDelete'       , 160 , '' , 'none' , 'none')
-call s:hi('GitGutterChangeDelete' , 140 , '' , 'none' , 'none')
+call s:hi('GitGutterAdd'          , 36  , 234 , 'none' , 'none')
+call s:hi('GitGutterChange'       , 178 , 234 , 'none' , 'none')
+call s:hi('GitGutterDelete'       , 160 , 234 , 'none' , 'none')
+call s:hi('GitGutterChangeDelete' , 140 , 234 , 'none' , 'none')
 
 " vim-signify
 call s:hi('SignifySignAdd'         , 36  , '' , 'none' , 'none')
